@@ -5,10 +5,10 @@
       xmlns:dc="http://purl.org/dc/elements/1.1/" 
       version="2.0">
 <channel>
-<title>Simply Rational - Data Science Blog</title>
+<title>Data Science Blog</title>
 <link>https://simply-rational-gmbh.github.io/datascienceblog/</link>
 <atom:link href="https://simply-rational-gmbh.github.io/datascienceblog/index.xml" rel="self" type="application/rss+xml"/>
-<description>Simply Rational ...</description>
+<description>Simply Rational ist eine Ausgründung aus dem Max-Planck-Institut für Bildungsforschung, einer weltweit führenden Institution für die Erforschung von Entscheidungsstrategien. Co-Founder Prof. Gerd Gigerenzer ist einer der meistzitierten Psychologen weltweit. Unsere Arbeit basiert auf nobelpreisprämierten Ansätzen aus Data Science, Behavioral Science und Organisationsentwicklung. Durch die Verbindung menschlicher und künstlicher Intelligenz schaffen wir erfolgreiche Lösungen für komplexe Entscheidungssituationen.</description>
 <generator>quarto-1.10.18</generator>
 <lastBuildDate>Thu, 17 Sep 2026 22:00:00 GMT</lastBuildDate>
 <item>
@@ -36,8 +36,8 @@
 <div class="cell">
 <div class="cell-output-display">
 <style>.dataTable, .dataTable td, .dataTable th { font-family: 'Noto Serif JP', sans-serif; }</style>
-<div class="datatables html-widget html-fill-item" id="htmlwidget-773af4c92c7a9d8c0990" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-773af4c92c7a9d8c0990">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5"],["deepseek-r1:latest","gemma3:latest","llama3.1:latest","mistral:latest","qwen3:latest"],["5.2 GB","3.3 GB","4.9 GB","4.4 GB","5.2 GB"],["8.2B","4.3B","8.0B","7.2B","8.2B"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>LLM Model<\/th>\n      <th>Größe<\/th>\n      <th>Parameter<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"initComplete":"function(settings, json) {\n         $(this.api().table().header()).css({\n           'background-color': '#661AAE',\n           'color': '#FFFFFF',\n           'font-family': 'Noto Serif JP'\n         });\n       }","dom":"t","columnDefs":[{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"LLM Model","targets":1},{"name":"Größe","targets":2},{"name":"Parameter","targets":3}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":["options.initComplete"],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-3877ebda4d84287080e4" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-3877ebda4d84287080e4">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5"],["deepseek-r1:latest","gemma3:latest","llama3.1:latest","mistral:latest","qwen3:latest"],["5.2 GB","3.3 GB","4.9 GB","4.4 GB","5.2 GB"],["8.2B","4.3B","8.0B","7.2B","8.2B"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>LLM Model<\/th>\n      <th>Größe<\/th>\n      <th>Parameter<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"initComplete":"function(settings, json) {\n         $(this.api().table().header()).css({\n           'background-color': '#661AAE',\n           'color': '#FFFFFF',\n           'font-family': 'Noto Serif JP'\n         });\n       }","dom":"t","columnDefs":[{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"LLM Model","targets":1},{"name":"Größe","targets":2},{"name":"Parameter","targets":3}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":["options.initComplete"],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
@@ -72,8 +72,8 @@ In summary, the response to question 5.6 constitutes a material misstatement and
 <div class="cell">
 <div class="cell-output-display">
 <style>.dataTable, .dataTable td, .dataTable th { font-family: 'Noto Serif JP', sans-serif; }</style>
-<div class="datatables html-widget html-fill-item" id="htmlwidget-2b7f1ff14c88ea2ea56e" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-2b7f1ff14c88ea2ea56e">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4"],["gemma3","llama3.1","mistral","qwen3"],[0,70,66.25,58.75]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>LLM Model<\/th>\n      <th>Mittelwert der Fehlerquote<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"initComplete":"function(settings, json) {\n         $(this.api().table().header()).css({\n           'background-color': '#661AAE',\n           'color': '#FFFFFF',\n           'font-family': 'Noto Serif JP'\n         });\n       }","dom":"t","columnDefs":[{"className":"dt-right","targets":2},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"LLM Model","targets":1},{"name":"Mittelwert der Fehlerquote","targets":2}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":["options.initComplete"],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-bafaaba09af48b18bfc4" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-bafaaba09af48b18bfc4">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4"],["gemma3","llama3.1","mistral","qwen3"],[0,70,66.25,58.75]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>LLM Model<\/th>\n      <th>Mittelwert der Fehlerquote<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"initComplete":"function(settings, json) {\n         $(this.api().table().header()).css({\n           'background-color': '#661AAE',\n           'color': '#FFFFFF',\n           'font-family': 'Noto Serif JP'\n         });\n       }","dom":"t","columnDefs":[{"className":"dt-right","targets":2},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"LLM Model","targets":1},{"name":"Mittelwert der Fehlerquote","targets":2}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":["options.initComplete"],"jsHooks":[]}</script>
 </div>
 </div>
 <section id="details" class="level3">
@@ -98,8 +98,8 @@ In summary, the response to question 5.6 constitutes a material misstatement and
 <div class="cell">
 <div class="cell-output-display">
 <style>.dataTable, .dataTable td, .dataTable th { font-family: 'Noto Serif JP', sans-serif; }</style>
-<div class="datatables html-widget html-fill-item" id="htmlwidget-d7443d2339b18d142a8b" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-d7443d2339b18d142a8b">{"x":{"filter":"none","vertical":false,"caption":"<caption>TI: Token Input, TO: Token Output, Summen beziehen sich auf 80 Wiederholgungen.<\/caption>","data":[["1","2","3","4"],["mistral","qwen3","llama3.1","gemma3"],[436.375,1274.475,414.2625,541.25],[34910,101958,33141,43300],[1815,1529.5,1423.5,1523],[145200,122360,113880,121840],[null,null,null,null]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>LLM Model<\/th>\n      <th>TI Mittelwert<\/th>\n      <th>TI Summe<\/th>\n      <th>TO Mittewert<\/th>\n      <th>TO Summe<\/th>\n      <th>T Kosten<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"initComplete":"function(settings, json) {\n         $(this.api().table().header()).css({\n           'background-color': '#661AAE',\n           'color': '#FFFFFF',\n           'font-family': 'Noto Serif JP'\n         });\n       }","dom":"t","columnDefs":[{"className":"dt-right","targets":[2,3,4,5,6]},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"LLM Model","targets":1},{"name":"TI Mittelwert","targets":2},{"name":"TI Summe","targets":3},{"name":"TO Mittewert","targets":4},{"name":"TO Summe","targets":5},{"name":"T Kosten","targets":6}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":["options.initComplete"],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-a853fd22d074f3c9bf52" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-a853fd22d074f3c9bf52">{"x":{"filter":"none","vertical":false,"caption":"<caption>TI: Token Input, TO: Token Output, Summen beziehen sich auf 80 Wiederholgungen.<\/caption>","data":[["1","2","3","4"],["mistral","qwen3","llama3.1","gemma3"],[436.375,1274.475,414.2625,541.25],[34910,101958,33141,43300],[1815,1529.5,1423.5,1523],[145200,122360,113880,121840],[null,null,null,null]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>LLM Model<\/th>\n      <th>TI Mittelwert<\/th>\n      <th>TI Summe<\/th>\n      <th>TO Mittewert<\/th>\n      <th>TO Summe<\/th>\n      <th>T Kosten<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"initComplete":"function(settings, json) {\n         $(this.api().table().header()).css({\n           'background-color': '#661AAE',\n           'color': '#FFFFFF',\n           'font-family': 'Noto Serif JP'\n         });\n       }","dom":"t","columnDefs":[{"className":"dt-right","targets":[2,3,4,5,6]},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"LLM Model","targets":1},{"name":"TI Mittelwert","targets":2},{"name":"TI Summe","targets":3},{"name":"TO Mittewert","targets":4},{"name":"TO Summe","targets":5},{"name":"T Kosten","targets":6}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":["options.initComplete"],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
@@ -118,9 +118,9 @@ In summary, the response to question 5.6 constitutes a material misstatement and
 Gavin R. Maistry, S. L., Jochen Reb. (2025-11). Accelerating expertise in professional decision making:the effects of a simple rules training. <em>Journal of Business Research</em>, (200).
 </div>
 </div></section></div> ]]></description>
+  <category>Entscheidung</category>
   <category>Underwriting</category>
   <category>LLM</category>
-  <category>Entscheidung</category>
   <guid>https://simply-rational-gmbh.github.io/datascienceblog/posts/underwriter_llm/</guid>
   <pubDate>Thu, 17 Sep 2026 22:00:00 GMT</pubDate>
   <media:content url="https://simply-rational-gmbh.github.io/datascienceblog/posts/underwriter_llm/ce7ec2a6-c03d-4500-989b-bfef3053370e.png" medium="image" type="image/png" height="132" width="144"/>
@@ -250,7 +250,8 @@ Xie, Y., &amp; Qiu, Y. (2026). <em><span class="nocase">highr</span>: Syntax hig
   <category>Opensource</category>
   <category>Danksagung</category>
   <guid>https://simply-rational-gmbh.github.io/datascienceblog/posts/opensource_credits/</guid>
-  <pubDate>Thu, 17 Sep 2026 22:00:00 GMT</pubDate>
+  <pubDate>Wed, 16 Sep 2026 22:00:00 GMT</pubDate>
+  <media:content url="https://simply-rational-gmbh.github.io/datascienceblog/posts/opensource_credits/oss-jenga-thanks.png" medium="image" type="image/png" height="144" width="144"/>
 </item>
 </channel>
 </rss>

@@ -9,7 +9,7 @@
 <meta name="author" content="Majid Eismann">
 <meta name="dcterms.date" content="2026-09-18">
 
-<title>Entscheidungsqualität von LLMs im Underwriting – Simply Rational - Data Science Blog</title>
+<title>Entscheidungsqualität von LLMs im Underwriting – Data Science Blog</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -125,7 +125,7 @@ div.csl-indent {
     <img src="../../logo.png" alt="" class="navbar-logo dark-content">
     </a>
     <a class="navbar-brand" href="../../index.html">
-    <span class="navbar-title">Simply Rational - Data Science Blog</span>
+    <span class="navbar-title">Data Science Blog</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -162,9 +162,9 @@ div.csl-indent {
 <div class="quarto-title">
 <h1 class="title">Entscheidungsqualität von LLMs im Underwriting</h1>
   <div class="quarto-categories">
+    <div class="quarto-category">Entscheidung</div>
     <div class="quarto-category">Underwriting</div>
     <div class="quarto-category">LLM</div>
-    <div class="quarto-category">Entscheidung</div>
   </div>
   </div>
 
@@ -210,8 +210,8 @@ div.csl-indent {
 <div class="cell">
 <div class="cell-output-display">
 <style>.dataTable, .dataTable td, .dataTable th { font-family: 'Noto Serif JP', sans-serif; }</style>
-<div class="datatables html-widget html-fill-item" id="htmlwidget-773af4c92c7a9d8c0990" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-773af4c92c7a9d8c0990">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5"],["deepseek-r1:latest","gemma3:latest","llama3.1:latest","mistral:latest","qwen3:latest"],["5.2 GB","3.3 GB","4.9 GB","4.4 GB","5.2 GB"],["8.2B","4.3B","8.0B","7.2B","8.2B"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>LLM Model<\/th>\n      <th>Größe<\/th>\n      <th>Parameter<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"initComplete":"function(settings, json) {\n         $(this.api().table().header()).css({\n           'background-color': '#661AAE',\n           'color': '#FFFFFF',\n           'font-family': 'Noto Serif JP'\n         });\n       }","dom":"t","columnDefs":[{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"LLM Model","targets":1},{"name":"Größe","targets":2},{"name":"Parameter","targets":3}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":["options.initComplete"],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-3877ebda4d84287080e4" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-3877ebda4d84287080e4">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5"],["deepseek-r1:latest","gemma3:latest","llama3.1:latest","mistral:latest","qwen3:latest"],["5.2 GB","3.3 GB","4.9 GB","4.4 GB","5.2 GB"],["8.2B","4.3B","8.0B","7.2B","8.2B"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>LLM Model<\/th>\n      <th>Größe<\/th>\n      <th>Parameter<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"initComplete":"function(settings, json) {\n         $(this.api().table().header()).css({\n           'background-color': '#661AAE',\n           'color': '#FFFFFF',\n           'font-family': 'Noto Serif JP'\n         });\n       }","dom":"t","columnDefs":[{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"LLM Model","targets":1},{"name":"Größe","targets":2},{"name":"Parameter","targets":3}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":["options.initComplete"],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
@@ -246,8 +246,8 @@ In summary, the response to question 5.6 constitutes a material misstatement and
 <div class="cell">
 <div class="cell-output-display">
 <style>.dataTable, .dataTable td, .dataTable th { font-family: 'Noto Serif JP', sans-serif; }</style>
-<div class="datatables html-widget html-fill-item" id="htmlwidget-2b7f1ff14c88ea2ea56e" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-2b7f1ff14c88ea2ea56e">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4"],["gemma3","llama3.1","mistral","qwen3"],[0,70,66.25,58.75]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>LLM Model<\/th>\n      <th>Mittelwert der Fehlerquote<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"initComplete":"function(settings, json) {\n         $(this.api().table().header()).css({\n           'background-color': '#661AAE',\n           'color': '#FFFFFF',\n           'font-family': 'Noto Serif JP'\n         });\n       }","dom":"t","columnDefs":[{"className":"dt-right","targets":2},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"LLM Model","targets":1},{"name":"Mittelwert der Fehlerquote","targets":2}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":["options.initComplete"],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-bafaaba09af48b18bfc4" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-bafaaba09af48b18bfc4">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4"],["gemma3","llama3.1","mistral","qwen3"],[0,70,66.25,58.75]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>LLM Model<\/th>\n      <th>Mittelwert der Fehlerquote<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"initComplete":"function(settings, json) {\n         $(this.api().table().header()).css({\n           'background-color': '#661AAE',\n           'color': '#FFFFFF',\n           'font-family': 'Noto Serif JP'\n         });\n       }","dom":"t","columnDefs":[{"className":"dt-right","targets":2},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"LLM Model","targets":1},{"name":"Mittelwert der Fehlerquote","targets":2}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":["options.initComplete"],"jsHooks":[]}</script>
 </div>
 </div>
 <section id="details" class="level3">
@@ -272,8 +272,8 @@ In summary, the response to question 5.6 constitutes a material misstatement and
 <div class="cell">
 <div class="cell-output-display">
 <style>.dataTable, .dataTable td, .dataTable th { font-family: 'Noto Serif JP', sans-serif; }</style>
-<div class="datatables html-widget html-fill-item" id="htmlwidget-d7443d2339b18d142a8b" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-d7443d2339b18d142a8b">{"x":{"filter":"none","vertical":false,"caption":"<caption>TI: Token Input, TO: Token Output, Summen beziehen sich auf 80 Wiederholgungen.<\/caption>","data":[["1","2","3","4"],["mistral","qwen3","llama3.1","gemma3"],[436.375,1274.475,414.2625,541.25],[34910,101958,33141,43300],[1815,1529.5,1423.5,1523],[145200,122360,113880,121840],[null,null,null,null]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>LLM Model<\/th>\n      <th>TI Mittelwert<\/th>\n      <th>TI Summe<\/th>\n      <th>TO Mittewert<\/th>\n      <th>TO Summe<\/th>\n      <th>T Kosten<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"initComplete":"function(settings, json) {\n         $(this.api().table().header()).css({\n           'background-color': '#661AAE',\n           'color': '#FFFFFF',\n           'font-family': 'Noto Serif JP'\n         });\n       }","dom":"t","columnDefs":[{"className":"dt-right","targets":[2,3,4,5,6]},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"LLM Model","targets":1},{"name":"TI Mittelwert","targets":2},{"name":"TI Summe","targets":3},{"name":"TO Mittewert","targets":4},{"name":"TO Summe","targets":5},{"name":"T Kosten","targets":6}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":["options.initComplete"],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-a853fd22d074f3c9bf52" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-a853fd22d074f3c9bf52">{"x":{"filter":"none","vertical":false,"caption":"<caption>TI: Token Input, TO: Token Output, Summen beziehen sich auf 80 Wiederholgungen.<\/caption>","data":[["1","2","3","4"],["mistral","qwen3","llama3.1","gemma3"],[436.375,1274.475,414.2625,541.25],[34910,101958,33141,43300],[1815,1529.5,1423.5,1523],[145200,122360,113880,121840],[null,null,null,null]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>LLM Model<\/th>\n      <th>TI Mittelwert<\/th>\n      <th>TI Summe<\/th>\n      <th>TO Mittewert<\/th>\n      <th>TO Summe<\/th>\n      <th>T Kosten<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"initComplete":"function(settings, json) {\n         $(this.api().table().header()).css({\n           'background-color': '#661AAE',\n           'color': '#FFFFFF',\n           'font-family': 'Noto Serif JP'\n         });\n       }","dom":"t","columnDefs":[{"className":"dt-right","targets":[2,3,4,5,6]},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"LLM Model","targets":1},{"name":"TI Mittelwert","targets":2},{"name":"TI Summe","targets":3},{"name":"TO Mittewert","targets":4},{"name":"TO Summe","targets":5},{"name":"T Kosten","targets":6}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":["options.initComplete"],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
