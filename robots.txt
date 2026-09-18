@@ -1,1 +1,1 @@
-Sitemap: https://Simply-Rational-GmbH.github.io/datascienceblog/sitemap.xml
+Sitemap: https://simply-rational-gmbh.github.io/datascienceblog/sitemap.xml

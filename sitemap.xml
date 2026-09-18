@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://Simply-Rational-GmbH.github.io/datascienceblog/index.html</loc>
-    <lastmod>2026-09-14T15:10:32.036Z</lastmod>
+    <loc>https://simply-rational-gmbh.github.io/datascienceblog/about.html</loc>
+    <lastmod>2026-09-18T09:57:03.669Z</lastmod>
+  </url>
+  <url>
+    <loc>https://simply-rational-gmbh.github.io/datascienceblog/posts/opensource_credits/index.html</loc>
+    <lastmod>2026-09-18T10:18:14.537Z</lastmod>
+  </url>
+  <url>
+    <loc>https://simply-rational-gmbh.github.io/datascienceblog/posts/underwriter_llm/index.html</loc>
+    <lastmod>2026-09-18T12:38:21.679Z</lastmod>
+  </url>
+  <url>
+    <loc>https://simply-rational-gmbh.github.io/datascienceblog/index.html</loc>
+    <lastmod>2026-09-16T13:13:27.097Z</lastmod>
   </url>
 </urlset>

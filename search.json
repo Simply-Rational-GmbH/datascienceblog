@@ -1,16 +1,86 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Data Science Blog",
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Über uns",
     "section": "",
-    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sagittis posuere ligula sit amet lacinia. Duis dignissim pellentesque magna, rhoncus congue sapien finibus mollis. Ut eu sem laoreet, vehicula ipsum in, convallis erat. Vestibulum magna sem, blandit pulvinar augue sit amet, auctor malesuada sapien. Nullam faucibus leo eget eros hendrerit, non laoreet ipsum lacinia. Curabitur cursus diam elit, non tempus ante volutpat a. Quisque hendrerit blandit purus non fringilla. Integer sit amet elit viverra ante dapibus semper. Vestibulum viverra rutrum enim, at luctus enim posuere eu. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
+    "text": "Simply Rational ist eine Ausgründung aus dem Max-Planck-Institut für Bildungsforschung, einer weltweit führenden Institution für die Erforschung von Entscheidungsstrategien. Co-Founder Prof. Gerd Gigerenzer ist einer der meistzitierten Psychologen weltweit. Unsere Arbeit basiert auf nobelpreisprämierten Ansätzen aus Data Science, Behavioral Science und Organisationsentwicklung. Durch die Verbindung menschlicher und künstlicher Intelligenz schaffen wir erfolgreiche Lösungen für komplexe Entscheidungssituationen.\nDer gesamte Simply Rational Blog und die veröffentlichten Analyse wurde mithilfe von Open Source Software erstellt. Wir bedanken uns bei allen beteiligten Entwickler*innen und freuen uns über die gemeinsame Gesinnung zur Transparenz."
   },
   {
-    "objectID": "index.html#styling-setup-test",
-    "href": "index.html#styling-setup-test",
-    "title": "Data Science Blog",
+    "objectID": "posts/opensource_credits/index.html",
+    "href": "posts/opensource_credits/index.html",
+    "title": "OpenSource",
     "section": "",
-    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sagittis posuere ligula sit amet lacinia. Duis dignissim pellentesque magna, rhoncus congue sapien finibus mollis. Ut eu sem laoreet, vehicula ipsum in, convallis erat. Vestibulum magna sem, blandit pulvinar augue sit amet, auctor malesuada sapien. Nullam faucibus leo eget eros hendrerit, non laoreet ipsum lacinia. Curabitur cursus diam elit, non tempus ante volutpat a. Quisque hendrerit blandit purus non fringilla. Integer sit amet elit viverra ante dapibus semper. Vestibulum viverra rutrum enim, at luctus enim posuere eu. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
+    "text": "Simply Rational und das Data Science Team möchten sich explizit bei der Open Source Community für ihre Arbeit bedanken. Ohne eure Arbeit wäre die Erstellung dieses Blogs, unsere Analysen und Forschung, sowie unsere Karrieren und Erfolge im Data Science Bereich nicht möglich. Vielen Dank!"
+  },
+  {
+    "objectID": "posts/opensource_credits/index.html#danksagung",
+    "href": "posts/opensource_credits/index.html#danksagung",
+    "title": "OpenSource",
+    "section": "",
+    "text": "Simply Rational und das Data Science Team möchten sich explizit bei der Open Source Community für ihre Arbeit bedanken. Ohne eure Arbeit wäre die Erstellung dieses Blogs, unsere Analysen und Forschung, sowie unsere Karrieren und Erfolge im Data Science Bereich nicht möglich. Vielen Dank!"
+  },
+  {
+    "objectID": "posts/opensource_credits/index.html#quellen-verwendeter-software",
+    "href": "posts/opensource_credits/index.html#quellen-verwendeter-software",
+    "title": "OpenSource",
+    "section": "Quellen verwendeter Software",
+    "text": "Quellen verwendeter Software\nWir nutzen R v. 4.6.1 (R Core Team, 2026) und folgende R-Pakete: base64enc v. 0.1.6 (Urbanek, 2026), bslib v. 0.12.0 (Sievert et al., 2026), cachem v. 1.1.0 (Chang, 2024a), desc v. 1.4.3 (Csárdi et al., 2023), digest v. 0.6.39 (Eddelbuettel, 2025), evaluate v. 1.0.5 (Wickham & Xie, 2025), fastmap v. 1.2.0 (Chang, 2024b), fontawesome v. 0.5.3 (Iannone, 2024), fs v. 2.1.0 (Hester et al., 2026), grateful v. 0.3.0 (Rodriguez-Sanchez & Jackson, 2025), highr v. 0.12 (Xie & Qiu, 2026), htmltools v. 0.5.9 (Cheng, Sievert, et al., 2025), jquerylib v. 0.1.4 (Sievert & Cheng, 2021), knitr v. 1.52 (Xie, 2014, 2015, 2026a), lifecycle v. 1.0.5 (Henry & Wickham, 2026), memoise v. 2.0.1 (Wickham et al., 2021), mime v. 0.13 (Xie, 2025), R6 v. 2.6.1 (Chang, 2025), rappdirs v. 0.3.4 (Ratnakumar et al., 2026), remotes v. 2.5.0 (Csárdi et al., 2024), renv v. 1.2.4 (Ushey & Wickham, 2026), rmarkdown v. 2.32 (Allaire et al., 2026; Xie et al., 2018; Xie et al., 2020), sass v. 0.4.10 (Cheng, Mastny, et al., 2025), tidyverse v. 2.0.0 (Wickham et al., 2019), tinytex v. 0.60 (Xie, 2019, 2026b), xfun v. 0.60 (Xie, 2026c), yaml v. 2.3.12 (Stephens & Simonov, 2025)."
+  },
+  {
+    "objectID": "posts/underwriter_llm/index.html",
+    "href": "posts/underwriter_llm/index.html",
+    "title": "Entscheidungsqualität von LLMs im Underwriting",
+    "section": "",
+    "text": "Underwriting ist die zentrale Schaltstelle im Versicherungsgeschäft. Gavin R. Maistry (2025-11) zeigen in einer Studie einen positiven Einfluss durch das Heuristiktraining auf die Arbeitsqualität bei Underwriterinnen. Die zehn wissenschaftlich belegten Heuristiken wurden mit gängigen LLM-Modellen über Prompting evaluiert. Alle geprüften Modelle weisen eine deutlich höhere Fehlerquote auf – im Mittel 65 % – im Vergleich zu heuristisch geschulten Underwriterinnen (mit einer Fehlerquote von 26,4 %)."
+  },
+  {
+    "objectID": "posts/underwriter_llm/index.html#tldr",
+    "href": "posts/underwriter_llm/index.html#tldr",
+    "title": "Entscheidungsqualität von LLMs im Underwriting",
+    "section": "",
+    "text": "Underwriting ist die zentrale Schaltstelle im Versicherungsgeschäft. Gavin R. Maistry (2025-11) zeigen in einer Studie einen positiven Einfluss durch das Heuristiktraining auf die Arbeitsqualität bei Underwriterinnen. Die zehn wissenschaftlich belegten Heuristiken wurden mit gängigen LLM-Modellen über Prompting evaluiert. Alle geprüften Modelle weisen eine deutlich höhere Fehlerquote auf – im Mittel 65 % – im Vergleich zu heuristisch geschulten Underwriterinnen (mit einer Fehlerquote von 26,4 %)."
+  },
+  {
+    "objectID": "posts/underwriter_llm/index.html#hintergrund",
+    "href": "posts/underwriter_llm/index.html#hintergrund",
+    "title": "Entscheidungsqualität von LLMs im Underwriting",
+    "section": "Hintergrund",
+    "text": "Hintergrund\nUnderwriting ist die zentrale Schaltstelle im Versicherungsgeschäft, weil hier über Annahme, Ablehnung und Preis eines Risikos entschieden wird. Jede einzelne Underwriting-Entscheidung wirkt sich unmittelbar auf das Verhältnis von Prämieneinnahmen zu übernommenem Risiko aus, weshalb systematische Fehleinschätzungen sich über das gesamte Portfolio hinweg verstärken und schnell zu einer Schieflage führen können. Gerade weil diese Entscheidungen oft unter Unsicherheit und mit unvollständigen Informationen getroffen werden müssen, hängt die Qualität des Underwritings maßgeblich davon ab, wie gut Underwriter:innen Urteilsfehler wie Selbstüberschätzung oder Verzerrungen in der Risikobewertung erkennen und vermeiden.\nGavin R. Maistry (2025-11) untersuchen, ob sich professionelle Urteilsfähigkeit im Underwriting durch ein Training in Heuristiken beschleunigt entwickeln lässt, statt allein auf jahrelange Erfahrung zu setzen.In einem quasi-experimentellen Design mit 220 Underwriter*innen unterschiedlicher Erfahrungsstufen erhielt eine Trainingsgruppe ein skriptbasiertes Training, das typische Situationsmuster und daraus abgeleitete Entscheidungsregeln aus Interviews mit erfahrenen Underwriter:innen vermittelte, während eine aktive Kontrollgruppe zum Vergleich diente. Die Ergebnisse zeigen, dass das Training die Entscheidungsqualität (Genauigkeit und Konsistenz) messbar verbesserte und dabei besonders Berufsanfänger*innen zugutekam – ein Beleg dafür, dass Heuristiken unter Unsicherheit als wirksame Entscheidungsstrategien fungieren und den Aufbau von Expertise gezielt beschleunigen können.\nDieser Post untersucht, inwieweit die von Gavin R. Maistry (2025-11) extrahierten Heuristiken eine einfache Nutzung von LLMs verbessern können, indem die Heuristiken als Instruktion im Prompt verwendet werden. Dies spiegelt den niedrigschwelligsten Anwendungsfall für die Nutzung von LLMs wieder, das ohne Training der LLM Modell auskommt."
+  },
+  {
+    "objectID": "posts/underwriter_llm/index.html#llm-modelle",
+    "href": "posts/underwriter_llm/index.html#llm-modelle",
+    "title": "Entscheidungsqualität von LLMs im Underwriting",
+    "section": "LLM Modelle",
+    "text": "LLM Modelle\nDie folgenden LLM-Modelle wurden hinsichtlich ihrer Entscheidungsqualität untersucht. Für das Prompting wurde entweder die direkte Frage nach der Versicherbarkeit des jeweiligen Falls gestellt, oder es wurde eine Hilfestellung mit den Maistry-Regeln in den Prompt integriert. Zudem wurden diese Prompts jeweils mit und ohne System-Prompt getestet."
+  },
+  {
+    "objectID": "posts/underwriter_llm/index.html#versicherungsfälle",
+    "href": "posts/underwriter_llm/index.html#versicherungsfälle",
+    "title": "Entscheidungsqualität von LLMs im Underwriting",
+    "section": "Versicherungsfälle",
+    "text": "Versicherungsfälle\nInsgesamt haben Gavin R. Maistry (2025-11) 50 Versicherungsbeispiele zur Ableitung der Heuristiken verwendet. Zwei Beispiele werden in der Studie direkt beschrieben, die von Expert*innen schnell als unversicherbar erkannt wurden, aber von Berufsanfänger*innen teils als versicherbar bewertet wurden. Der erste Fall bezieht sich auf die Versicherung einer Ehe und der zweite Fall auf die Versicherung gegen SARS-CoV-2. Die verwendeten fiktiven Anträge, die von den LLM-Modellen beurteilt wurden, können über die Links eingesehen werden."
+  },
+  {
+    "objectID": "posts/underwriter_llm/index.html#ergebnisse",
+    "href": "posts/underwriter_llm/index.html#ergebnisse",
+    "title": "Entscheidungsqualität von LLMs im Underwriting",
+    "section": "Ergebnisse",
+    "text": "Ergebnisse\nZunächst fällt das Gesamtergebnis sehr unterschiedlich nach Modell aus. Llama 3.1 und Mistral zeigen sehr hohe Fehlerquoten, wohingegen Gemma 3 ein perfektes Ergebnis liefert. Bei detaillierter Betrachtung der Gemma-3-Ergebnisse wird deutlich, dass das Modell starke Interpretationsschwierigkeiten mit den Fallbeschreibungen hat und falsche Schlüsse zieht. Der Rückgabewert des Modells ist zwar immer die Entscheidung, nicht zu versichern, diese beruht jedoch auf halluzinierten Zusammenhängen.\nZum Vergleich erzielten Underwriter*innen eine Fehlerquote von nur 26.4% über 20 Fallbeispiele (Gavin R. Maistry, 2025-11), und damit liegt die Qualität der Entscheidungen von trainierten Underwriter*innen deutlich über der Entscheidungsqualität von LLM-Modellen.\n\n\nBeispiel für gemma3 Fehlinterpretation des Fallbeispiels\n\n\nFALSE\nReasoning:\nThis application presents several significant red flags that would lead to a rejection by an underwriter. The primary concern is the “Yes” response to question 5.6, “Has either applicant been married more than once previously?” While the applicant states “No” to prior marriages, the “Yes” to this specific question raises serious concerns about marital stability and potential future instability. The fact that they previously answered “Yes” to question 5.5, “Has this marriage been continuously in force for at least 90 days as of today’s date?” further increases suspicion.\nHere’s a breakdown of the relevant passages supporting this decision:\n\n“5 · MARRIAGE & RELATIONSHIP HISTORY”: “Has either applicant been married more than once previously? ☒ Yes” – This is a critical red flag. It immediately raises questions about the history of the marriage and potential factors that could lead to dissolution.\n“5 · MARITAL STABILITY ATTESTATIONS”: The series of “Yes” answers to questions regarding marital stability (specifically 5.6) suggests a significant instability in their relationship and/or a lack of fully transparent communication. The applicant’s response to question 5.6 is the most damning—suggesting a previous marriage.\n\nFurthermore, the applicant’s financial information (combined household income of $148,000) coupled with existing life insurance policies, creates a situation where the applicant may be intentionally underreporting some financial information to reduce the premium cost.\nIn summary, the response to question 5.6 constitutes a material misstatement and jeopardizes the integrity of the application. This application will be automatically rejected.\n\n— gemma3\n\n\n\n\n\n\n\n\n\n\n\nDetails\nDie Fehlerquoten für die jeweils 10 Wiederholungen je Balken sind in der folgenden Grafik dargestellt. Der erste Balken oben links lässt sich so interpretieren, dass der Covid-Versicherungsfall bei 6 von 10 Wiederholungen angenommen wurde, wenn die Maistry-Regeln und ein Systemprompt verwendet wurden, um die Aufgabe als Underwriter*in zu lösen.\nTeilweise zeigt sich ein positiver Effekt der Anwendung der Maistry-Regeln, z. B. für Qwen3, aber auch der umgekehrte Effekt für Mistral. Der Systemprompt scheint i. d. R. die Fehlerquote zu erhöhen.\nZwar scheinen die Fehlerquoten von Qwen3 für die Ehe-Versicherung sehr niedrig zu sein (ohne Systemprompt), sie zeigen sich jedoch nicht konsistent mit den wesentlich höheren Ergebnissen für die Covid-Versicherung. Eine konsistente Anwendung der Regeln gelingt dem Modell nicht und sollte mit weiteren Fallbeispielen untersucht werden. Der umgekehrte Zusammenhang zeigt sich für Mistral und Qwen3 mit Systemprompt (Covid vergleichbar gering, aber der Ehe-Fall sehr hoch).\nFür ein genaueres Bild und eine bessere Vergleichbarkeit sollten weitere Versicherungsfälle hinzugefügt werden.\n\n\n\n\n\n\n\n\n\n\n\nToken Kosten\nDie mittlere Tokenanzahl sowie die Summen für die verschiedenen Modelle und die Gesamtsumme über 80 Wiederholungen sind in der folgenden Tabelle dargestellt."
+  },
+  {
+    "objectID": "posts/underwriter_llm/index.html#methoden",
+    "href": "posts/underwriter_llm/index.html#methoden",
+    "title": "Entscheidungsqualität von LLMs im Underwriting",
+    "section": "Methoden",
+    "text": "Methoden\nDer gesamte Simply Rational Blog und die Analyse wurden mithilfe von Open Source Software erstellt. Wir bedanken uns bei allen beteiligten Entwickler*innen und freuen uns über das gemeinsame Bekenntnis zur Transparenz.\nSie möchten mehr zu dem Thema erfahren oder haben Fragen? Kommen Sie gerne auf uns zu und schicken Sie uns eine Nachricht."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Simply Rational - Data Science Blog",
+    "section": "",
+    "text": "Entscheidungsqualität von LLMs im Underwriting\n\n\n\nUnderwriting\n\nLLM\n\nEntscheidung\n\n\n\n\n\n\n\n\n\nSep 18, 2026\n\n\nMajid Eismann\n\n\n\n\n\n\n\n\n\n\n\n\nOpenSource\n\n\n\nOpensource\n\nDanksagung\n\n\n\n\n\n\n\n\n\nSep 18, 2026\n\n\nMajid Eismann\n\n\n\n\n\nNo matching items"
   }
 ]

@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>Simply Rational - Data Science Blog</title>
+<link>https://simply-rational-gmbh.github.io/datascienceblog/</link>
+<atom:link href="https://simply-rational-gmbh.github.io/datascienceblog/index.xml" rel="self" type="application/rss+xml"/>
+<description>Simply Rational ...</description>
+<generator>quarto-1.10.18</generator>
+<lastBuildDate>Thu, 17 Sep 2026 22:00:00 GMT</lastBuildDate>
+<item>
+  <title>Entscheidungsqualität von LLMs im Underwriting</title>
+  <dc:creator>Majid Eismann</dc:creator>
+  <link>https://simply-rational-gmbh.github.io/datascienceblog/posts/underwriter_llm/</link>
+  <description><![CDATA[ 
+
+
+
+
+<section id="tldr" class="level2">
+<h2 class="anchored" data-anchor-id="tldr">TL;DR</h2>
+<p>Underwriting ist die zentrale Schaltstelle im Versicherungsgeschäft. <span class="citation" data-cites="maistry2025">Gavin R. Maistry (2025-11)</span> zeigen in einer Studie einen positiven Einfluss durch das Heuristiktraining auf die Arbeitsqualität bei Underwriterinnen. Die zehn wissenschaftlich belegten Heuristiken wurden mit gängigen LLM-Modellen über Prompting evaluiert. Alle geprüften Modelle weisen eine <strong>deutlich höhere Fehlerquote auf – im Mittel 65 % – im Vergleich zu heuristisch geschulten Underwriterinnen (mit einer Fehlerquote von 26,4 %).</strong></p>
+</section>
+<section id="hintergrund" class="level2">
+<h2 class="anchored" data-anchor-id="hintergrund">Hintergrund</h2>
+<p>Underwriting ist die zentrale Schaltstelle im Versicherungsgeschäft, weil hier über Annahme, Ablehnung und Preis eines Risikos entschieden wird. Jede einzelne Underwriting-Entscheidung wirkt sich unmittelbar auf das Verhältnis von Prämieneinnahmen zu übernommenem Risiko aus, weshalb systematische Fehleinschätzungen sich über das gesamte Portfolio hinweg verstärken und schnell zu einer Schieflage führen können. Gerade weil diese Entscheidungen oft unter Unsicherheit und mit unvollständigen Informationen getroffen werden müssen, hängt die Qualität des Underwritings maßgeblich davon ab, wie gut Underwriter:innen Urteilsfehler wie Selbstüberschätzung oder Verzerrungen in der Risikobewertung erkennen und vermeiden.</p>
+<p><span class="citation" data-cites="maistry2025">Gavin R. Maistry (2025-11)</span> untersuchen, ob sich professionelle Urteilsfähigkeit im Underwriting durch ein Training in Heuristiken beschleunigt entwickeln lässt, statt allein auf jahrelange Erfahrung zu setzen.In einem quasi-experimentellen Design mit 220 Underwriter*innen unterschiedlicher Erfahrungsstufen erhielt eine Trainingsgruppe ein skriptbasiertes Training, das typische Situationsmuster und daraus abgeleitete Entscheidungsregeln aus Interviews mit erfahrenen Underwriter:innen vermittelte, während eine aktive Kontrollgruppe zum Vergleich diente. Die Ergebnisse zeigen, dass das Training die Entscheidungsqualität (Genauigkeit und Konsistenz) messbar verbesserte und dabei besonders Berufsanfänger*innen zugutekam – ein Beleg dafür, dass Heuristiken unter Unsicherheit als wirksame Entscheidungsstrategien fungieren und den Aufbau von Expertise gezielt beschleunigen können.</p>
+<p>Dieser Post untersucht, inwieweit die von <span class="citation" data-cites="maistry2025">Gavin R. Maistry (2025-11)</span> extrahierten Heuristiken eine einfache Nutzung von LLMs verbessern können, indem die Heuristiken als Instruktion im Prompt verwendet werden. Dies spiegelt den niedrigschwelligsten Anwendungsfall für die Nutzung von LLMs wieder, das ohne Training der LLM Modell auskommt.</p>
+</section>
+<section id="llm-modelle" class="level2">
+<h2 class="anchored" data-anchor-id="llm-modelle">LLM Modelle</h2>
+<p>Die folgenden LLM-Modelle wurden hinsichtlich ihrer Entscheidungsqualität untersucht. Für das Prompting wurde entweder die direkte Frage nach der Versicherbarkeit des jeweiligen Falls gestellt, oder es wurde eine Hilfestellung mit den Maistry-Regeln in den Prompt integriert. Zudem wurden diese Prompts jeweils mit und ohne System-Prompt getestet.</p>
+<div class="cell">
+<div class="cell-output-display">
+<style>.dataTable, .dataTable td, .dataTable th { font-family: 'Noto Serif JP', sans-serif; }</style>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-773af4c92c7a9d8c0990" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-773af4c92c7a9d8c0990">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5"],["deepseek-r1:latest","gemma3:latest","llama3.1:latest","mistral:latest","qwen3:latest"],["5.2 GB","3.3 GB","4.9 GB","4.4 GB","5.2 GB"],["8.2B","4.3B","8.0B","7.2B","8.2B"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>LLM Model<\/th>\n      <th>Größe<\/th>\n      <th>Parameter<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"initComplete":"function(settings, json) {\n         $(this.api().table().header()).css({\n           'background-color': '#661AAE',\n           'color': '#FFFFFF',\n           'font-family': 'Noto Serif JP'\n         });\n       }","dom":"t","columnDefs":[{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"LLM Model","targets":1},{"name":"Größe","targets":2},{"name":"Parameter","targets":3}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":["options.initComplete"],"jsHooks":[]}</script>
+</div>
+</div>
+</section>
+<section id="versicherungsfälle" class="level2">
+<h2 class="anchored" data-anchor-id="versicherungsfälle">Versicherungsfälle</h2>
+<p>Insgesamt haben <span class="citation" data-cites="maistry2025">Gavin R. Maistry (2025-11)</span> 50 Versicherungsbeispiele zur Ableitung der Heuristiken verwendet. Zwei Beispiele werden in der Studie direkt beschrieben, die von Expert*innen schnell als unversicherbar erkannt wurden, aber von Berufsanfänger*innen teils als versicherbar bewertet wurden. Der erste Fall bezieht sich auf die <a href="./insure_marriage.pdf">Versicherung einer Ehe</a> und der zweite Fall auf die Versicherung gegen <a href="./insure_covid.pdf">SARS-CoV-2</a>. Die verwendeten fiktiven Anträge, die von den LLM-Modellen beurteilt wurden, können über die Links eingesehen werden.</p>
+</section>
+<section id="ergebnisse" class="level2">
+<h2 class="anchored" data-anchor-id="ergebnisse">Ergebnisse</h2>
+<p>Zunächst fällt das Gesamtergebnis sehr unterschiedlich nach Modell aus. Llama 3.1 und Mistral zeigen sehr hohe Fehlerquoten, wohingegen Gemma 3 ein perfektes Ergebnis liefert. Bei detaillierter Betrachtung der Gemma-3-Ergebnisse wird deutlich, dass das Modell starke Interpretationsschwierigkeiten mit den Fallbeschreibungen hat und falsche Schlüsse zieht. Der Rückgabewert des Modells ist zwar immer die Entscheidung, nicht zu versichern, diese beruht jedoch auf halluzinierten Zusammenhängen.</p>
+<p>Zum Vergleich <strong>erzielten Underwriter*innen eine Fehlerquote von nur 26.4%</strong> über 20 Fallbeispiele <span class="citation" data-cites="maistry2025">(Gavin R. Maistry, 2025-11)</span>, und damit liegt die Qualität der Entscheidungen von trainierten Underwriter*innen deutlich über der Entscheidungsqualität von LLM-Modellen.</p>
+<details>
+<summary>
+Beispiel für gemma3 Fehlinterpretation des Fallbeispiels
+</summary>
+<blockquote class="blockquote">
+<p>FALSE</p>
+<p><strong>Reasoning:</strong></p>
+<p>This application presents several significant red flags that would lead to a rejection by an underwriter. The primary concern is the “Yes” response to question 5.6, “Has either applicant been married more than once previously?” While the applicant states “No” to prior marriages, the “Yes” to this specific question raises serious concerns about marital stability and potential future instability. The fact that they previously answered “Yes” to question 5.5, “Has this marriage been continuously in force for at least 90 days as of today’s date?” further increases suspicion.</p>
+<p>Here’s a breakdown of the relevant passages supporting this decision:</p>
+<ul>
+<li><strong>“5 · MARRIAGE &amp; RELATIONSHIP HISTORY”</strong>: “Has either applicant been married more than once previously? ☒ Yes” – This is a critical red flag. It immediately raises questions about the history of the marriage and potential factors that could lead to dissolution.</li>
+<li><strong>“5 · MARITAL STABILITY ATTESTATIONS”</strong>: The series of “Yes” answers to questions regarding marital stability (specifically 5.6) suggests a significant instability in their relationship and/or a lack of fully transparent communication. The applicant’s response to question 5.6 is the most damning—suggesting a previous marriage.</li>
+</ul>
+<p>Furthermore, the applicant’s financial information (combined household income of $148,000) coupled with existing life insurance policies, creates a situation where the applicant may be intentionally underreporting some financial information to reduce the premium cost.</p>
+In summary, the response to question 5.6 constitutes a material misstatement and jeopardizes the integrity of the application. This application will be automatically rejected.
+<footer>
+— <cite>gemma3</cite>
+</footer>
+</blockquote>
+</details>
+<div class="cell">
+<div class="cell-output-display">
+<style>.dataTable, .dataTable td, .dataTable th { font-family: 'Noto Serif JP', sans-serif; }</style>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-2b7f1ff14c88ea2ea56e" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-2b7f1ff14c88ea2ea56e">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4"],["gemma3","llama3.1","mistral","qwen3"],[0,70,66.25,58.75]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>LLM Model<\/th>\n      <th>Mittelwert der Fehlerquote<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"initComplete":"function(settings, json) {\n         $(this.api().table().header()).css({\n           'background-color': '#661AAE',\n           'color': '#FFFFFF',\n           'font-family': 'Noto Serif JP'\n         });\n       }","dom":"t","columnDefs":[{"className":"dt-right","targets":2},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"LLM Model","targets":1},{"name":"Mittelwert der Fehlerquote","targets":2}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":["options.initComplete"],"jsHooks":[]}</script>
+</div>
+</div>
+<section id="details" class="level3">
+<h3 class="anchored" data-anchor-id="details">Details</h3>
+<p>Die Fehlerquoten für die jeweils 10 Wiederholungen je Balken sind in der folgenden Grafik dargestellt. Der erste Balken oben links lässt sich so interpretieren, dass der Covid-Versicherungsfall bei 6 von 10 Wiederholungen angenommen wurde, wenn die Maistry-Regeln und ein Systemprompt verwendet wurden, um die Aufgabe als Underwriter*in zu lösen.</p>
+<p>Teilweise zeigt sich ein positiver Effekt der Anwendung der Maistry-Regeln, z. B. für Qwen3, aber auch der umgekehrte Effekt für Mistral. Der Systemprompt scheint i. d.&nbsp;R. die Fehlerquote zu erhöhen.</p>
+<p>Zwar scheinen die Fehlerquoten von Qwen3 für die Ehe-Versicherung sehr niedrig zu sein (ohne Systemprompt), sie zeigen sich jedoch nicht konsistent mit den wesentlich höheren Ergebnissen für die Covid-Versicherung. Eine konsistente Anwendung der Regeln gelingt dem Modell nicht und sollte mit weiteren Fallbeispielen untersucht werden. Der umgekehrte Zusammenhang zeigt sich für Mistral und Qwen3 mit Systemprompt (Covid vergleichbar gering, aber der Ehe-Fall sehr hoch).</p>
+<p>Für ein genaueres Bild und eine bessere Vergleichbarkeit sollten weitere Versicherungsfälle hinzugefügt werden.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="https://simply-rational-gmbh.github.io/datascienceblog/posts/underwriter_llm/index_files/figure-html/result-overall-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="token-kosten" class="level3">
+<h3 class="anchored" data-anchor-id="token-kosten">Token Kosten</h3>
+<p>Die mittlere Tokenanzahl sowie die Summen für die verschiedenen Modelle und die Gesamtsumme über 80 Wiederholungen sind in der folgenden Tabelle dargestellt.</p>
+<div class="cell">
+<div class="cell-output-display">
+<style>.dataTable, .dataTable td, .dataTable th { font-family: 'Noto Serif JP', sans-serif; }</style>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-d7443d2339b18d142a8b" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-d7443d2339b18d142a8b">{"x":{"filter":"none","vertical":false,"caption":"<caption>TI: Token Input, TO: Token Output, Summen beziehen sich auf 80 Wiederholgungen.<\/caption>","data":[["1","2","3","4"],["mistral","qwen3","llama3.1","gemma3"],[436.375,1274.475,414.2625,541.25],[34910,101958,33141,43300],[1815,1529.5,1423.5,1523],[145200,122360,113880,121840],[null,null,null,null]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>LLM Model<\/th>\n      <th>TI Mittelwert<\/th>\n      <th>TI Summe<\/th>\n      <th>TO Mittewert<\/th>\n      <th>TO Summe<\/th>\n      <th>T Kosten<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"initComplete":"function(settings, json) {\n         $(this.api().table().header()).css({\n           'background-color': '#661AAE',\n           'color': '#FFFFFF',\n           'font-family': 'Noto Serif JP'\n         });\n       }","dom":"t","columnDefs":[{"className":"dt-right","targets":[2,3,4,5,6]},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"LLM Model","targets":1},{"name":"TI Mittelwert","targets":2},{"name":"TI Summe","targets":3},{"name":"TO Mittewert","targets":4},{"name":"TO Summe","targets":5},{"name":"T Kosten","targets":6}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":["options.initComplete"],"jsHooks":[]}</script>
+</div>
+</div>
+</section>
+</section>
+<section id="methoden" class="level2">
+<h2 class="anchored" data-anchor-id="methoden">Methoden</h2>
+<p>Der gesamte Simply Rational Blog und die Analyse wurden mithilfe von <a href="../../posts/opensource_credits/index.html">Open Source</a> Software erstellt. Wir bedanken uns bei allen beteiligten Entwickler*innen und freuen uns über das gemeinsame Bekenntnis zur Transparenz.</p>
+<p>Sie möchten mehr zu dem Thema erfahren oder haben Fragen? Kommen Sie gerne auf uns zu und schicken Sie uns eine <a href="mailto:GuteEntscheidung@simplyrational.de?subject=DataScienceBlog-UnderwriterLLM">Nachricht</a>.</p>
+
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2">
+<div id="ref-maistry2025" class="csl-entry">
+Gavin R. Maistry, S. L., Jochen Reb. (2025-11). Accelerating expertise in professional decision making:the effects of a simple rules training. <em>Journal of Business Research</em>, (200).
+</div>
+</div></section></div> ]]></description>
+  <category>Underwriting</category>
+  <category>LLM</category>
+  <category>Entscheidung</category>
+  <guid>https://simply-rational-gmbh.github.io/datascienceblog/posts/underwriter_llm/</guid>
+  <pubDate>Thu, 17 Sep 2026 22:00:00 GMT</pubDate>
+  <media:content url="https://simply-rational-gmbh.github.io/datascienceblog/posts/underwriter_llm/ce7ec2a6-c03d-4500-989b-bfef3053370e.png" medium="image" type="image/png" height="132" width="144"/>
+</item>
+<item>
+  <title>OpenSource</title>
+  <dc:creator>Majid Eismann</dc:creator>
+  <link>https://simply-rational-gmbh.github.io/datascienceblog/posts/opensource_credits/</link>
+  <description><![CDATA[ 
+
+
+
+
+<section id="danksagung" class="level2">
+<h2 class="anchored" data-anchor-id="danksagung">Danksagung</h2>
+<p>Simply Rational und das Data Science Team möchten sich explizit bei der Open Source Community für ihre Arbeit bedanken. Ohne eure Arbeit wäre die Erstellung dieses Blogs, unsere Analysen und Forschung, sowie unsere Karrieren und Erfolge im Data Science Bereich nicht möglich. Vielen Dank!</p>
+</section>
+<section id="quellen-verwendeter-software" class="level2">
+<h2 class="anchored" data-anchor-id="quellen-verwendeter-software">Quellen verwendeter Software</h2>
+<p>Wir nutzen R v. 4.6.1 <span class="citation" data-cites="base">(R Core Team, 2026)</span> und folgende R-Pakete: base64enc v. 0.1.6 <span class="citation" data-cites="base64enc">(Urbanek, 2026)</span>, bslib v. 0.12.0 <span class="citation" data-cites="bslib">(Sievert et al., 2026)</span>, cachem v. 1.1.0 <span class="citation" data-cites="cachem">(Chang, 2024a)</span>, desc v. 1.4.3 <span class="citation" data-cites="desc">(Csárdi et al., 2023)</span>, digest v. 0.6.39 <span class="citation" data-cites="digest">(Eddelbuettel, 2025)</span>, evaluate v. 1.0.5 <span class="citation" data-cites="evaluate">(Wickham &amp; Xie, 2025)</span>, fastmap v. 1.2.0 <span class="citation" data-cites="fastmap">(Chang, 2024b)</span>, fontawesome v. 0.5.3 <span class="citation" data-cites="fontawesome">(Iannone, 2024)</span>, fs v. 2.1.0 <span class="citation" data-cites="fs">(Hester et al., 2026)</span>, grateful v. 0.3.0 <span class="citation" data-cites="grateful">(Rodriguez-Sanchez &amp; Jackson, 2025)</span>, highr v. 0.12 <span class="citation" data-cites="highr">(Xie &amp; Qiu, 2026)</span>, htmltools v. 0.5.9 <span class="citation" data-cites="htmltools">(Cheng, Sievert, et al., 2025)</span>, jquerylib v. 0.1.4 <span class="citation" data-cites="jquerylib">(Sievert &amp; Cheng, 2021)</span>, knitr v. 1.52 <span class="citation" data-cites="knitr2014 knitr2015 knitr2026">(Xie, 2014, 2015, 2026a)</span>, lifecycle v. 1.0.5 <span class="citation" data-cites="lifecycle">(Henry &amp; Wickham, 2026)</span>, memoise v. 2.0.1 <span class="citation" data-cites="memoise">(Wickham et al., 2021)</span>, mime v. 0.13 <span class="citation" data-cites="mime">(Xie, 2025)</span>, R6 v. 2.6.1 <span class="citation" data-cites="R6">(Chang, 2025)</span>, rappdirs v. 0.3.4 <span class="citation" data-cites="rappdirs">(Ratnakumar et al., 2026)</span>, remotes v. 2.5.0 <span class="citation" data-cites="remotes">(Csárdi et al., 2024)</span>, renv v. 1.2.4 <span class="citation" data-cites="renv">(Ushey &amp; Wickham, 2026)</span>, rmarkdown v. 2.32 <span class="citation" data-cites="rmarkdown2018 rmarkdown2020 rmarkdown2026">(Allaire et al., 2026; Xie et al., 2018; Xie et al., 2020)</span>, sass v. 0.4.10 <span class="citation" data-cites="sass">(Cheng, Mastny, et al., 2025)</span>, tidyverse v. 2.0.0 <span class="citation" data-cites="tidyverse">(Wickham et al., 2019)</span>, tinytex v. 0.60 <span class="citation" data-cites="tinytex2019 tinytex2026">(Xie, 2019, 2026b)</span>, xfun v. 0.60 <span class="citation" data-cites="xfun">(Xie, 2026c)</span>, yaml v. 2.3.12 <span class="citation" data-cites="yaml">(Stephens &amp; Simonov, 2025)</span>.</p>
+
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2">
+<div id="ref-rmarkdown2026" class="csl-entry">
+Allaire, J., Xie, Y., Dervieux, C., McPherson, J., Luraschi, J., Ushey, K., Atkins, A., Wickham, H., Cheng, J., Chang, W., &amp; Iannone, R. (2026). <em><span class="nocase">rmarkdown</span>: Dynamic documents for r</em>. <a href="https://github.com/rstudio/rmarkdown">https://github.com/rstudio/rmarkdown</a>
+</div>
+<div id="ref-cachem" class="csl-entry">
+Chang, W. (2024a). <em><span class="nocase">cachem</span>: Cache r objects with automatic pruning</em>. <a href="https://doi.org/10.32614/CRAN.package.cachem">https://doi.org/10.32614/CRAN.package.cachem</a>
+</div>
+<div id="ref-fastmap" class="csl-entry">
+Chang, W. (2024b). <em><span class="nocase">fastmap</span>: Fast data structures</em>. <a href="https://doi.org/10.32614/CRAN.package.fastmap">https://doi.org/10.32614/CRAN.package.fastmap</a>
+</div>
+<div id="ref-R6" class="csl-entry">
+Chang, W. (2025). <em>R6: Encapsulated classes with reference semantics</em>. <a href="https://doi.org/10.32614/CRAN.package.R6">https://doi.org/10.32614/CRAN.package.R6</a>
+</div>
+<div id="ref-sass" class="csl-entry">
+Cheng, J., Mastny, T., Iannone, R., Schloerke, B., &amp; Sievert, C. (2025). <em><span class="nocase">sass</span>: Syntactically awesome style sheets (<span>“<span>Sass</span>”</span>)</em>. <a href="https://doi.org/10.32614/CRAN.package.sass">https://doi.org/10.32614/CRAN.package.sass</a>
+</div>
+<div id="ref-htmltools" class="csl-entry">
+Cheng, J., Sievert, C., Schloerke, B., Chang, W., Xie, Y., &amp; Allen, J. (2025). <em><span class="nocase">htmltools</span>: Tools for HTML</em>. <a href="https://doi.org/10.32614/CRAN.package.htmltools">https://doi.org/10.32614/CRAN.package.htmltools</a>
+</div>
+<div id="ref-remotes" class="csl-entry">
+Csárdi, G., Hester, J., Wickham, H., Chang, W., Morgan, M., &amp; Tenenbaum, D. (2024). <em><span class="nocase">remotes</span>: R package installation from remote repositories, including <span>“<span>GitHub</span>”</span></em>. <a href="https://doi.org/10.32614/CRAN.package.remotes">https://doi.org/10.32614/CRAN.package.remotes</a>
+</div>
+<div id="ref-desc" class="csl-entry">
+Csárdi, G., Müller, K., &amp; Hester, J. (2023). <em><span class="nocase">desc</span>: Manipulate DESCRIPTION files</em>. <a href="https://doi.org/10.32614/CRAN.package.desc">https://doi.org/10.32614/CRAN.package.desc</a>
+</div>
+<div id="ref-digest" class="csl-entry">
+Eddelbuettel, D. (2025). <em><span class="nocase">digest</span>: Create compact hash digests of r objects</em>. <a href="https://doi.org/10.32614/CRAN.package.digest">https://doi.org/10.32614/CRAN.package.digest</a>
+</div>
+<div id="ref-lifecycle" class="csl-entry">
+Henry, L., &amp; Wickham, H. (2026). <em><span class="nocase">lifecycle</span>: Manage the life cycle of your package functions</em>. <a href="https://doi.org/10.32614/CRAN.package.lifecycle">https://doi.org/10.32614/CRAN.package.lifecycle</a>
+</div>
+<div id="ref-fs" class="csl-entry">
+Hester, J., Wickham, H., &amp; Csárdi, G. (2026). <em><span class="nocase">fs</span>: Cross-platform file system operations based on <span>“<span class="nocase">libuv</span>”</span></em>. <a href="https://doi.org/10.32614/CRAN.package.fs">https://doi.org/10.32614/CRAN.package.fs</a>
+</div>
+<div id="ref-fontawesome" class="csl-entry">
+Iannone, R. (2024). <em><span class="nocase">fontawesome</span>: Easily work with <span>“<span>Font Awesome</span>”</span> icons</em>. <a href="https://doi.org/10.32614/CRAN.package.fontawesome">https://doi.org/10.32614/CRAN.package.fontawesome</a>
+</div>
+<div id="ref-base" class="csl-entry">
+R Core Team. (2026). <em><span>R</span>: A language and environment for statistical computing</em>. R Foundation for Statistical Computing. <a href="https://doi.org/10.32614/R.manuals">https://doi.org/10.32614/R.manuals</a>
+</div>
+<div id="ref-rappdirs" class="csl-entry">
+Ratnakumar, S., Mick, T., &amp; Davis, T. (2026). <em><span class="nocase">rappdirs</span>: Application directories: Determine where to save data, caches, and logs</em>. <a href="https://doi.org/10.32614/CRAN.package.rappdirs">https://doi.org/10.32614/CRAN.package.rappdirs</a>
+</div>
+<div id="ref-grateful" class="csl-entry">
+Rodriguez-Sanchez, F., &amp; Jackson, C. P. (2025). <em><span class="nocase">grateful</span>: Facilitate citation of <span>R</span> packages</em>. <a href="https://pakillo.github.io/grateful/">https://pakillo.github.io/grateful/</a>
+</div>
+<div id="ref-jquerylib" class="csl-entry">
+Sievert, C., &amp; Cheng, J. (2021). <em><span class="nocase">jquerylib</span>: Obtain <span>“<span class="nocase">jQuery</span>”</span> as an HTML dependency object</em>. <a href="https://doi.org/10.32614/CRAN.package.jquerylib">https://doi.org/10.32614/CRAN.package.jquerylib</a>
+</div>
+<div id="ref-bslib" class="csl-entry">
+Sievert, C., Cheng, J., &amp; Aden-Buie, G. (2026). <em><span class="nocase">bslib</span>: Custom <span>“<span>Bootstrap</span>”</span> <span>“<span>Sass</span>”</span> themes for <span>“<span class="nocase">shiny</span>”</span> and <span>“<span class="nocase">rmarkdown</span>”</span></em>. <a href="https://doi.org/10.32614/CRAN.package.bslib">https://doi.org/10.32614/CRAN.package.bslib</a>
+</div>
+<div id="ref-yaml" class="csl-entry">
+Stephens, J., &amp; Simonov, K. (2025). <em><span class="nocase">yaml</span>: Methods to convert r data to YAML and back</em>. <a href="https://doi.org/10.32614/CRAN.package.yaml">https://doi.org/10.32614/CRAN.package.yaml</a>
+</div>
+<div id="ref-base64enc" class="csl-entry">
+Urbanek, S. (2026). <em>base64enc: Tools for <span>“<span class="nocase">base64</span>”</span> encoding</em>. <a href="https://doi.org/10.32614/CRAN.package.base64enc">https://doi.org/10.32614/CRAN.package.base64enc</a>
+</div>
+<div id="ref-renv" class="csl-entry">
+Ushey, K., &amp; Wickham, H. (2026). <em><span class="nocase">renv</span>: Project environments</em>. <a href="https://doi.org/10.32614/CRAN.package.renv">https://doi.org/10.32614/CRAN.package.renv</a>
+</div>
+<div id="ref-tidyverse" class="csl-entry">
+Wickham, H., Averick, M., Bryan, J., Chang, W., McGowan, L. D., François, R., Grolemund, G., Hayes, A., Henry, L., Hester, J., Kuhn, M., Pedersen, T. L., Miller, E., Bache, S. M., Müller, K., Ooms, J., Robinson, D., Seidel, D. P., Spinu, V., … Yutani, H. (2019). Welcome to the <span class="nocase">tidyverse</span>. <em>Journal of Open Source Software</em>, <em>4</em>(43), 1686. <a href="https://doi.org/10.21105/joss.01686">https://doi.org/10.21105/joss.01686</a>
+</div>
+<div id="ref-memoise" class="csl-entry">
+Wickham, H., Hester, J., Chang, W., Müller, K., &amp; Cook, D. (2021). <em><span class="nocase">memoise</span>: <span>“<span>Memoisation</span>”</span> of functions</em>. <a href="https://doi.org/10.32614/CRAN.package.memoise">https://doi.org/10.32614/CRAN.package.memoise</a>
+</div>
+<div id="ref-evaluate" class="csl-entry">
+Wickham, H., &amp; Xie, Y. (2025). <em><span class="nocase">evaluate</span>: Parsing and evaluation tools that provide more details than the default</em>. <a href="https://doi.org/10.32614/CRAN.package.evaluate">https://doi.org/10.32614/CRAN.package.evaluate</a>
+</div>
+<div id="ref-knitr2014" class="csl-entry">
+Xie, Y. (2014). <span class="nocase">knitr</span>: A comprehensive tool for reproducible research in <span>R</span>. In V. Stodden, F. Leisch, &amp; R. D. Peng (Eds.), <em>Implementing reproducible computational research</em>. Chapman; Hall/CRC.
+</div>
+<div id="ref-knitr2015" class="csl-entry">
+Xie, Y. (2015). <em>Dynamic documents with <span>R</span> and knitr</em> (2nd ed.). Chapman; Hall/CRC. <a href="https://yihui.org/knitr/">https://yihui.org/knitr/</a>
+</div>
+<div id="ref-tinytex2019" class="csl-entry">
+Xie, Y. (2019). <span>TinyTeX</span>: A lightweight, cross-platform, and easy-to-maintain LaTeX distribution based on TeX live. <em>TUGboat</em>, <em>40</em>(1), 30–32. <a href="https://tug.org/TUGboat/Contents/contents40-1.html">https://tug.org/TUGboat/Contents/contents40-1.html</a>
+</div>
+<div id="ref-mime" class="csl-entry">
+Xie, Y. (2025). <em><span class="nocase">mime</span>: Map filenames to MIME types</em>. <a href="https://doi.org/10.32614/CRAN.package.mime">https://doi.org/10.32614/CRAN.package.mime</a>
+</div>
+<div id="ref-knitr2026" class="csl-entry">
+Xie, Y. (2026a). <em><span class="nocase">knitr</span>: A general-purpose package for dynamic report generation in <span>R</span></em>. <a href="https://yihui.org/knitr/">https://yihui.org/knitr/</a>
+</div>
+<div id="ref-tinytex2026" class="csl-entry">
+Xie, Y. (2026b). <em><span class="nocase">tinytex</span>: Helper functions to install and maintain TeX live, and compile LaTeX documents</em>. <a href="https://github.com/rstudio/tinytex">https://github.com/rstudio/tinytex</a>
+</div>
+<div id="ref-xfun" class="csl-entry">
+Xie, Y. (2026c). <em><span class="nocase">xfun</span>: Supporting functions for packages maintained by <span>“<span>Yihui Xie</span>”</span></em>. <a href="https://doi.org/10.32614/CRAN.package.xfun">https://doi.org/10.32614/CRAN.package.xfun</a>
+</div>
+<div id="ref-rmarkdown2018" class="csl-entry">
+Xie, Y., Allaire, J. J., &amp; Grolemund, G. (2018). <em>R markdown: The definitive guide</em>. Chapman; Hall/CRC. <a href="https://pkg.yihui.org/rmarkdown-book/">https://pkg.yihui.org/rmarkdown-book/</a>
+</div>
+<div id="ref-rmarkdown2020" class="csl-entry">
+Xie, Y., Dervieux, C., &amp; Riederer, E. (2020). <em>R markdown cookbook</em>. Chapman; Hall/CRC. <a href="https://pkg.yihui.org/rmarkdown-cookbook/">https://pkg.yihui.org/rmarkdown-cookbook/</a>
+</div>
+<div id="ref-highr" class="csl-entry">
+Xie, Y., &amp; Qiu, Y. (2026). <em><span class="nocase">highr</span>: Syntax highlighting for r source code</em>. <a href="https://doi.org/10.32614/CRAN.package.highr">https://doi.org/10.32614/CRAN.package.highr</a>
+</div>
+</div></section></div> ]]></description>
+  <category>Opensource</category>
+  <category>Danksagung</category>
+  <guid>https://simply-rational-gmbh.github.io/datascienceblog/posts/opensource_credits/</guid>
+  <pubDate>Thu, 17 Sep 2026 22:00:00 GMT</pubDate>
+</item>
+</channel>
+</rss>

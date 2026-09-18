@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Simply Rational - Data Science Blog</title>
+<title>Über uns – Simply Rational - Data Science Blog</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -36,13 +36,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
@@ -79,72 +76,14 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
+</head>
 
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="alternate" type="application/rss+xml" title="Simply Rational - Data Science Blog" href="index.xml" data-external="1"></head>
-
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+  <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -163,7 +102,7 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link active" href="./about.html" aria-current="page"> 
 <span class="menu-text">Über uns</span></a>
   </li>  
   <li class="nav-item compact">
@@ -179,102 +118,41 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block"></header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(2)</span></div><div class="category" data-category="RGFua3NhZ3VuZw==">Danksagung <span class="quarto-category-count">(1)</span></div><div class="category" data-category="RW50c2NoZWlkdW5n">Entscheidung <span class="quarto-category-count">(1)</span></div><div class="category" data-category="TExN">LLM <span class="quarto-category-count">(1)</span></div><div class="category" data-category="T3BlbnNvdXJjZQ==">Opensource <span class="quarto-category-count">(1)</span></div><div class="category" data-category="VW5kZXJ3cml0aW5n">Underwriting <span class="quarto-category-count">(1)</span></div></div></div>
+    
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
-
-
-
-
-
-
-
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="VW5kZXJ3cml0aW5nJTJDTExNJTJDRW50c2NoZWlkdW5n" data-listing-date-sort="1789682400000" data-listing-file-modified-sort="1789735101679" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="891">
-<div class="thumbnail"><a href="./posts/underwriter_llm/index.html" class="no-external">
-
-<img loading="lazy" src="./posts/underwriter_llm/ce7ec2a6-c03d-4500-989b-bfef3053370e.png" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/underwriter_llm/index.html" class="no-external">Entscheidungsqualität von LLMs im Underwriting</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('VW5kZXJ3cml0aW5n'); return false;">Underwriting</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('TExN'); return false;">LLM</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('RW50c2NoZWlkdW5n'); return false;">Entscheidung</div>
-
+<div class="quarto-about-jolla">
+  <img src="logo.png" class="about-image
+  round " style="height: 15em; width: 15em;">
+ <header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Über uns</h1>
 </div>
-<div class="delink listing-description"><a href="./posts/underwriter_llm/index.html" class="no-external">
-Underwriting ist die zentrale Schaltstelle im Versicherungsgeschäft. <span class="citation" data-cites="maistry2025">Gavin R. Maistry (2025-11)</span> zeigen in einer Studie einen positiven Einfluss durch das Heuristiktraining…<strong></strong>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/underwriter_llm/index.html" class="no-external">
-<div class="listing-date">
-Sep 18, 2026
-</div>
-<div class="listing-author">
-Majid Eismann
-</div>
-</a>
+<div class="quarto-title-meta">
+  </div>
+</header><main class="content" id="quarto-document-content">
+<p>Simply Rational ist eine Ausgründung aus dem Max-Planck-Institut für Bildungsforschung, einer weltweit führenden Institution für die Erforschung von Entscheidungsstrategien. Co-Founder Prof.&nbsp;Gerd Gigerenzer ist einer der meistzitierten Psychologen weltweit. Unsere Arbeit basiert auf nobelpreisprämierten Ansätzen aus Data Science, Behavioral Science und Organisationsentwicklung. Durch die Verbindung menschlicher und künstlicher Intelligenz schaffen wir erfolgreiche Lösungen für komplexe Entscheidungssituationen.</p>
+<p>Der gesamte Simply Rational Blog und die veröffentlichten Analyse wurde mithilfe von <a href="./posts/opensource_credits/index.html">Open Source</a> Software erstellt. Wir bedanken uns bei allen beteiligten Entwickler*innen und freuen uns über die gemeinsame Gesinnung zur Transparenz.</p>
+
+
+</main> 
+  <hr class="about-sep">
+   <div class="about-links">
+  <a href="https://www.linkedin.com/company/simply-rational/posts/?feedView=all" class="about-link" rel="" target="">
+    <i class="bi bi-linkedin"></i>
+     <span class="about-link-text">LinkedIn</span>
+  </a>
+  <a href="https://github.com/Simply-Rational-GmbH" class="about-link" rel="" target="">
+    <i class="bi bi-github"></i>
+     <span class="about-link-text">Github</span>
+  </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="T3BlbnNvdXJjZSUyQ0RhbmtzYWd1bmc=" data-listing-date-sort="1789682400000" data-listing-file-modified-sort="1789726694537" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="96">
-<div class="thumbnail"><a href="./posts/opensource_credits/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/opensource_credits/index.html" class="no-external">OpenSource</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('T3BlbnNvdXJjZQ=='); return false;">Opensource</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('RGFua3NhZ3VuZw=='); return false;">Danksagung</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/opensource_credits/index.html" class="no-external">
-Simply Rational und das Data Science Team möchten sich explizit bei der Open Source Community für ihre Arbeit bedanken. Ohne eure Arbeit wäre die Erstellung dieses Blogs…
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/opensource_credits/index.html" class="no-external">
-<div class="listing-date">
-Sep 18, 2026
-</div>
-<div class="listing-author">
-Majid Eismann
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+ <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
-    const icon = "";
-    const anchorJS = new window.AnchorJS();
-    anchorJS.options = {
-      placement: 'right',
-      icon: icon
-    };
-    anchorJS.add('.anchored');
     const isCodeAnnotation = (el) => {
       for (const clz of el.classList) {
         if (clz.startsWith('code-annotation-')) {                     
