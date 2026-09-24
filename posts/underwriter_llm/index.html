@@ -69,9 +69,9 @@ div.csl-indent {
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-474c7e87f9d8567478ea9db6de04b3f1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-474c7e87f9d8567478ea9db6de04b3f1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-474c7e87f9d8567478ea9db6de04b3f1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-01ce9914046eb0ca07730944b7cd9e32.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-01ce9914046eb0ca07730944b7cd9e32.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-01ce9914046eb0ca07730944b7cd9e32.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -99,6 +99,9 @@ div.csl-indent {
     "search-label": "Search"
   }
 }</script>
+<script src="../../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 <link href="../../site_libs/htmltools-fill-0.5.9/fill.css" rel="stylesheet">
 <script src="../../site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
 <link href="../../site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
@@ -134,12 +137,18 @@ div.csl-indent {
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="../../about.html"> 
-<span class="menu-text">Über uns</span></a>
-  </li>  
   <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/Simply-Rational-GmbH"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.linkedin.com/company/simply-rational/"> <i class="bi bi-linkedin" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.simplyrational.de/"> <i class="bi bi-globe" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -198,30 +207,34 @@ div.csl-indent {
 <h2 class="anchored" data-anchor-id="tldr">TL;DR</h2>
 <p>Underwriting ist die zentrale Schaltstelle im Versicherungsgeschäft. <span class="citation" data-cites="maistry2025">Gavin R. Maistry (<a href="#ref-maistry2025" role="doc-biblioref">2025-11</a>)</span> zeigen in einer Studie einen positiven Einfluss durch das Heuristiktraining auf die Arbeitsqualität bei Underwriterinnen. Die zehn wissenschaftlich belegten Heuristiken wurden mit gängigen LLM-Modellen über Prompting evaluiert. Alle geprüften Modelle weisen eine <strong>deutlich höhere Fehlerquote auf – im Mittel 65 % – im Vergleich zu heuristisch geschulten Underwriterinnen (mit einer Fehlerquote von 26,4 %).</strong></p>
 </section>
+<section id="anwendungsfall" class="level2">
+<h2 class="anchored" data-anchor-id="anwendungsfall">Anwendungsfall</h2>
+<p>Ein Versicherungsunternehmen möchte für seinen Kernprozess, das Underwriting, lokale Large Language Models (LLMs) einsetzen. Das hat den Vorteil, dass geringere Kosten entstehen und weniger Datenschutzhürden bestehen, da die Modelle auf den eigenen Servern laufen. Die LLMs werden nicht mit Unternehmensdaten trainiert. Stattdessen werden die Maistry-Regeln dem Prompt einfach als Instruktion hinzugefügt. Sie stehen stellvertretend für Regeln und Wissen, die im Unternehmen bereits vorhanden sind. Damit ist der niedrigschwelligste Anwendungsfall für den Einsatz von LLMs abgebildet.</p>
+</section>
 <section id="hintergrund" class="level2">
 <h2 class="anchored" data-anchor-id="hintergrund">Hintergrund</h2>
 <p>Underwriting ist die zentrale Schaltstelle im Versicherungsgeschäft, weil hier über Annahme, Ablehnung und Preis eines Risikos entschieden wird. Jede einzelne Underwriting-Entscheidung wirkt sich unmittelbar auf das Verhältnis von Prämieneinnahmen zu übernommenem Risiko aus, weshalb systematische Fehleinschätzungen sich über das gesamte Portfolio hinweg verstärken und schnell zu einer Schieflage führen können. Gerade weil diese Entscheidungen oft unter Unsicherheit und mit unvollständigen Informationen getroffen werden müssen, hängt die Qualität des Underwritings maßgeblich davon ab, wie gut Underwriter:innen Urteilsfehler wie Selbstüberschätzung oder Verzerrungen in der Risikobewertung erkennen und vermeiden.</p>
 <p><span class="citation" data-cites="maistry2025">Gavin R. Maistry (<a href="#ref-maistry2025" role="doc-biblioref">2025-11</a>)</span> untersuchen, ob sich professionelle Urteilsfähigkeit im Underwriting durch ein Training in Heuristiken beschleunigt entwickeln lässt, statt allein auf jahrelange Erfahrung zu setzen.In einem quasi-experimentellen Design mit 220 Underwriter*innen unterschiedlicher Erfahrungsstufen erhielt eine Trainingsgruppe ein skriptbasiertes Training, das typische Situationsmuster und daraus abgeleitete Entscheidungsregeln aus Interviews mit erfahrenen Underwriter:innen vermittelte, während eine aktive Kontrollgruppe zum Vergleich diente. Die Ergebnisse zeigen, dass das Training die Entscheidungsqualität (Genauigkeit und Konsistenz) messbar verbesserte und dabei besonders Berufsanfänger*innen zugutekam – ein Beleg dafür, dass Heuristiken unter Unsicherheit als wirksame Entscheidungsstrategien fungieren und den Aufbau von Expertise gezielt beschleunigen können.</p>
 <p>Dieser Post untersucht, inwieweit die von <span class="citation" data-cites="maistry2025">Gavin R. Maistry (<a href="#ref-maistry2025" role="doc-biblioref">2025-11</a>)</span> extrahierten Heuristiken eine einfache Nutzung von LLMs verbessern können, indem die Heuristiken als Instruktion im Prompt verwendet werden. Dies spiegelt den niedrigschwelligsten Anwendungsfall für die Nutzung von LLMs wieder, das ohne Training der LLM Modell auskommt.</p>
-</section>
-<section id="llm-modelle" class="level2">
-<h2 class="anchored" data-anchor-id="llm-modelle">LLM Modelle</h2>
+<section id="llm-modelle" class="level3">
+<h3 class="anchored" data-anchor-id="llm-modelle">LLM Modelle</h3>
 <p>Die folgenden LLM-Modelle wurden hinsichtlich ihrer Entscheidungsqualität untersucht. Für das Prompting wurde entweder die direkte Frage nach der Versicherbarkeit des jeweiligen Falls gestellt, oder es wurde eine Hilfestellung mit den Maistry-Regeln in den Prompt integriert. Zudem wurden diese Prompts jeweils mit und ohne System-Prompt getestet.</p>
 <div class="cell">
 <div class="cell-output-display">
-<style>.dataTable, .dataTable td, .dataTable th { font-family: 'Noto Serif JP', sans-serif; }</style>
-<div class="datatables html-widget html-fill-item" id="htmlwidget-3877ebda4d84287080e4" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-3877ebda4d84287080e4">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5"],["deepseek-r1:latest","gemma3:latest","llama3.1:latest","mistral:latest","qwen3:latest"],["5.2 GB","3.3 GB","4.9 GB","4.4 GB","5.2 GB"],["8.2B","4.3B","8.0B","7.2B","8.2B"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>LLM Model<\/th>\n      <th>Größe<\/th>\n      <th>Parameter<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"initComplete":"function(settings, json) {\n         $(this.api().table().header()).css({\n           'background-color': '#661AAE',\n           'color': '#FFFFFF',\n           'font-family': 'Noto Serif JP'\n         });\n       }","dom":"t","columnDefs":[{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"LLM Model","targets":1},{"name":"Größe","targets":2},{"name":"Parameter","targets":3}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":["options.initComplete"],"jsHooks":[]}</script>
+<style>.dataTable, .dataTable td, .dataTable th { font-family: 'Bricolage Grotesque', sans-serif; }</style>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-73c126270a366212f902" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-73c126270a366212f902">{"x":{"filter":"none","vertical":false,"data":[["gemma3:latest","llama3.1:latest","mistral:latest","qwen3:latest"],["3.3 GB","4.9 GB","4.4 GB","5.2 GB"],["4.3B","8.0B","7.2B","8.2B"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>LLM Model<\/th>\n      <th>Größe<\/th>\n      <th>Parameter<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"initComplete":"function(settings, json) {\n         $(this.api().table().header()).css({\n           'background-color': '#661AAE',\n           'color': '#FFFFFF',\n           'font-family': 'Bricolage Grotesque'\n         });\n       }","dom":"t","columnDefs":[{"name":"LLM Model","targets":0},{"name":"Größe","targets":1},{"name":"Parameter","targets":2}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":["options.initComplete"],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
-<section id="versicherungsfälle" class="level2">
-<h2 class="anchored" data-anchor-id="versicherungsfälle">Versicherungsfälle</h2>
+<section id="versicherungsfälle" class="level3">
+<h3 class="anchored" data-anchor-id="versicherungsfälle">Versicherungsfälle</h3>
 <p>Insgesamt haben <span class="citation" data-cites="maistry2025">Gavin R. Maistry (<a href="#ref-maistry2025" role="doc-biblioref">2025-11</a>)</span> 50 Versicherungsbeispiele zur Ableitung der Heuristiken verwendet. Zwei Beispiele werden in der Studie direkt beschrieben, die von Expert*innen schnell als unversicherbar erkannt wurden, aber von Berufsanfänger*innen teils als versicherbar bewertet wurden. Der erste Fall bezieht sich auf die <a href="./insure_marriage.pdf">Versicherung einer Ehe</a> und der zweite Fall auf die Versicherung gegen <a href="./insure_covid.pdf">SARS-CoV-2</a>. Die verwendeten fiktiven Anträge, die von den LLM-Modellen beurteilt wurden, können über die Links eingesehen werden.</p>
+</section>
 </section>
 <section id="ergebnisse" class="level2">
 <h2 class="anchored" data-anchor-id="ergebnisse">Ergebnisse</h2>
-<p>Zunächst fällt das Gesamtergebnis sehr unterschiedlich nach Modell aus. Llama 3.1 und Mistral zeigen sehr hohe Fehlerquoten, wohingegen Gemma 3 ein perfektes Ergebnis liefert. Bei detaillierter Betrachtung der Gemma-3-Ergebnisse wird deutlich, dass das Modell starke Interpretationsschwierigkeiten mit den Fallbeschreibungen hat und falsche Schlüsse zieht. Der Rückgabewert des Modells ist zwar immer die Entscheidung, nicht zu versichern, diese beruht jedoch auf halluzinierten Zusammenhängen.</p>
+<p>Zunächst fällt das Gesamtergebnis sehr unterschiedlich nach Modell aus. Llama 3.1 und Mistral zeigen sehr hohe Fehlerquoten, wohingegen Gemma 3 ein perfektes Ergebnis liefert. Bei genauer Betrachtung der Gemma-3-Ergebnisse wird deutlich, dass das Modell starke Interpretationsschwierigkeiten mit den Fallbeschreibungen hat und falsche Schlüsse zieht. Der Rückgabewert des Modells ist zwar immer die Entscheidung, nicht zu versichern, diese beruht jedoch auf halluzinierten Zusammenhängen.</p>
 <p>Zum Vergleich <strong>erzielten Underwriter*innen eine Fehlerquote von nur 26.4%</strong> über 20 Fallbeispiele <span class="citation" data-cites="maistry2025">(<a href="#ref-maistry2025" role="doc-biblioref">Gavin R. Maistry, 2025-11</a>)</span>, und damit liegt die Qualität der Entscheidungen von trainierten Underwriter*innen deutlich über der Entscheidungsqualität von LLM-Modellen.</p>
 <details>
 <summary>
@@ -245,9 +258,9 @@ In summary, the response to question 5.6 constitutes a material misstatement and
 </details>
 <div class="cell">
 <div class="cell-output-display">
-<style>.dataTable, .dataTable td, .dataTable th { font-family: 'Noto Serif JP', sans-serif; }</style>
-<div class="datatables html-widget html-fill-item" id="htmlwidget-bafaaba09af48b18bfc4" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-bafaaba09af48b18bfc4">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4"],["gemma3","llama3.1","mistral","qwen3"],[0,70,66.25,58.75]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>LLM Model<\/th>\n      <th>Mittelwert der Fehlerquote<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"initComplete":"function(settings, json) {\n         $(this.api().table().header()).css({\n           'background-color': '#661AAE',\n           'color': '#FFFFFF',\n           'font-family': 'Noto Serif JP'\n         });\n       }","dom":"t","columnDefs":[{"className":"dt-right","targets":2},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"LLM Model","targets":1},{"name":"Mittelwert der Fehlerquote","targets":2}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":["options.initComplete"],"jsHooks":[]}</script>
+<style>.dataTable, .dataTable td, .dataTable th { font-family: 'Bricolage Grotesque', sans-serif; }</style>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-54dc44209e4558da4d31" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-54dc44209e4558da4d31">{"x":{"filter":"none","vertical":false,"data":[["gemma3","llama3.1","mistral","qwen3"],[0,70,66.25,58.75]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>LLM Model<\/th>\n      <th>Mittelwert der Fehlerquote<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"initComplete":"function(settings, json) {\n         $(this.api().table().header()).css({\n           'background-color': '#661AAE',\n           'color': '#FFFFFF',\n           'font-family': 'Bricolage Grotesque'\n         });\n       }","dom":"t","columnDefs":[{"className":"dt-right","targets":1},{"name":"LLM Model","targets":0},{"name":"Mittelwert der Fehlerquote","targets":1}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":["options.initComplete"],"jsHooks":[]}</script>
 </div>
 </div>
 <section id="details" class="level3">
@@ -266,21 +279,48 @@ In summary, the response to question 5.6 constitutes a material misstatement and
 </div>
 </div>
 </section>
-<section id="token-kosten" class="level3">
-<h3 class="anchored" data-anchor-id="token-kosten">Token Kosten</h3>
+<section id="tokenverbrauch" class="level3">
+<h3 class="anchored" data-anchor-id="tokenverbrauch">Tokenverbrauch</h3>
 <p>Die mittlere Tokenanzahl sowie die Summen für die verschiedenen Modelle und die Gesamtsumme über 80 Wiederholungen sind in der folgenden Tabelle dargestellt.</p>
 <div class="cell">
 <div class="cell-output-display">
-<style>.dataTable, .dataTable td, .dataTable th { font-family: 'Noto Serif JP', sans-serif; }</style>
-<div class="datatables html-widget html-fill-item" id="htmlwidget-a853fd22d074f3c9bf52" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-a853fd22d074f3c9bf52">{"x":{"filter":"none","vertical":false,"caption":"<caption>TI: Token Input, TO: Token Output, Summen beziehen sich auf 80 Wiederholgungen.<\/caption>","data":[["1","2","3","4"],["mistral","qwen3","llama3.1","gemma3"],[436.375,1274.475,414.2625,541.25],[34910,101958,33141,43300],[1815,1529.5,1423.5,1523],[145200,122360,113880,121840],[null,null,null,null]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>LLM Model<\/th>\n      <th>TI Mittelwert<\/th>\n      <th>TI Summe<\/th>\n      <th>TO Mittewert<\/th>\n      <th>TO Summe<\/th>\n      <th>T Kosten<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"initComplete":"function(settings, json) {\n         $(this.api().table().header()).css({\n           'background-color': '#661AAE',\n           'color': '#FFFFFF',\n           'font-family': 'Noto Serif JP'\n         });\n       }","dom":"t","columnDefs":[{"className":"dt-right","targets":[2,3,4,5,6]},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"LLM Model","targets":1},{"name":"TI Mittelwert","targets":2},{"name":"TI Summe","targets":3},{"name":"TO Mittewert","targets":4},{"name":"TO Summe","targets":5},{"name":"T Kosten","targets":6}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":["options.initComplete"],"jsHooks":[]}</script>
+<style>.dataTable, .dataTable td, .dataTable th { font-family: 'Bricolage Grotesque', sans-serif; }</style>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-f02f613f25cb32b1569d" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-f02f613f25cb32b1569d">{"x":{"filter":"none","vertical":false,"caption":"<caption>TI: Token Input, TO: Token Output, Summen beziehen sich auf 80 Wiederholungen.<\/caption>","data":[["mistral","qwen3","llama3.1","gemma3"],[436.375,1274.475,414.2625,541.25],[34910,101958,33141,43300],[1815,1529.5,1423.5,1523],[145200,122360,113880,121840]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>LLM Model<\/th>\n      <th>TI Mittelwert<\/th>\n      <th>TI Summe<\/th>\n      <th>TO Mittewert<\/th>\n      <th>TO Summe<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"initComplete":"function(settings, json) {\n         $(this.api().table().header()).css({\n           'background-color': '#661AAE',\n           'color': '#FFFFFF',\n           'font-family': 'Bricolage Grotesque'\n         });\n       }","dom":"t","columnDefs":[{"className":"dt-right","targets":[1,2,3,4]},{"name":"LLM Model","targets":0},{"name":"TI Mittelwert","targets":1},{"name":"TI Summe","targets":2},{"name":"TO Mittewert","targets":3},{"name":"TO Summe","targets":4}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":["options.initComplete"],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
 </section>
 <section id="methoden" class="level2">
 <h2 class="anchored" data-anchor-id="methoden">Methoden</h2>
-<p>Der gesamte Simply Rational Blog und die Analyse wurden mithilfe von <a href="../../posts/opensource_credits/index.html">Open Source</a> Software erstellt. Wir bedanken uns bei allen beteiligten Entwickler*innen und freuen uns über das gemeinsame Bekenntnis zur Transparenz.</p>
+<p>Das Design der Analyse lässt sich in der folgenden Abbildung noch einmal zusammenfassen. Welche LLMs, mit welchen Versicherungsfällen untersucht worden sind, ist oben bereits beschrieben. Die Prompts bestehen aus einer einfachen Instruktion die Versicherungsfälle als Underwriter zu ihrer Versicherbarkeit zu bewerten. In der Bedingung mit Maistry-Regeln wurden zusätzlich die Originalregeln der Studie hinzugefügt. Ein System-Prompt ist eine Anweisung an das Sprachmodell, die vor dem eigentlichen Gespräch steht. Sie legt fest, wie sich das Modell verhalten soll, und gilt für alle folgenden Nachrichten. Hier wurde instruiert die Rolle des Underwriters in einem Verscherungsunternehmen einzunehmen. Die <strong>Fehlerquoten</strong> werden am Ende als Anteil der falschen Entscheidung (ja versicherbar) der 10 Wiederholungen berechnet.</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart TD
+    A["2 Versicherungsfälle&lt;br/&gt;(manuell überarbeitete Dokuemnte aus Claude 5.5)"]
+
+    A --&gt; B["Prompt mit Maistry"]
+    A --&gt; C["Prompt nur Underwriting"]
+
+    B --&gt; B1["Mit System-Prompt"]
+    B --&gt; B2["Ohne System-Prompt"]
+    C --&gt; C1["Mit System-Prompt"]
+    C --&gt; C2["Ohne System-Prompt"]
+
+    B1 --&gt; R1["10 Wiederholungen&lt;br/&gt;je LLM-Modell und Fall"]
+    B2 --&gt; R2["10 Wiederholungen&lt;br/&gt;je LLM-Modell und Fall"]
+    C1 --&gt; R3["10 Wiederholungen&lt;br/&gt;je LLM-Modell und Fall"]
+    C2 --&gt; R4["10 Wiederholungen&lt;br/&gt;je LLM-Modell und Fall"]
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p>Die Analyse wurden mithilfe von <a href="../../posts/opensource_credits/index.html">Open Source</a> Software erstellt. Wir bedanken uns bei allen beteiligten Entwickler*innen und freuen uns über das gemeinsame Bekenntnis zur Transparenz.</p>
 <p>Sie möchten mehr zu dem Thema erfahren oder haben Fragen? Kommen Sie gerne auf uns zu und schicken Sie uns eine <a href="mailto:GuteEntscheidung@simplyrational.de?subject=DataScienceBlog-UnderwriterLLM">Nachricht</a>.</p>
 
 
