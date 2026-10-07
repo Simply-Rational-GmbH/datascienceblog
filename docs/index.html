@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Majid Eismann">
 
-<title>Einfluss von defensivem Entscheiden – Data Science Blog</title>
+<title>Data Science Blog</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -27,55 +26,32 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-0a331cfb68345ec576c40a9fdbb8f93e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-0a331cfb68345ec576c40a9fdbb8f93e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-0a331cfb68345ec576c40a9fdbb8f93e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
-<meta name="shinylive:serviceworker_dir" content="../..">
-<script src="../../site_libs/quarto-contrib/shinylive-0.10.12/shinylive/load-shinylive-sw.js" type="module"></script>
-<script src="../../site_libs/quarto-contrib/shinylive-0.10.12/shinylive/run-python-blocks.js" type="module"></script>
-<link href="../../site_libs/quarto-contrib/shinylive-0.10.12/shinylive/shinylive.css" rel="stylesheet">
-<link href="../../site_libs/quarto-contrib/shinylive-quarto-css/shinylive-quarto.css" rel="stylesheet">
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-062e5b28287d0e8bfab7b21da9132919.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-062e5b28287d0e8bfab7b21da9132919.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-062e5b28287d0e8bfab7b21da9132919.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -103,23 +79,81 @@ div.csl-indent {
     "search-label": "Suchen"
   }
 }</script>
+<script>
 
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
 
-<link rel="stylesheet" href="../../styles.css">
-</head>
+    const options = {
+      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
+    };
 
-<body class="nav-fixed fullcontent quarto-light">
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="styles.css">
+<link rel="alternate" type="application/rss+xml" title="Data Science Blog" href="index.xml" data-external="1"></head>
+
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../simply-rational-logo.webp" alt="" class="navbar-logo light-content">
-    <img src="../../simply-rational-logo.webp" alt="" class="navbar-logo dark-content">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./simply-rational-logo.webp" alt="" class="navbar-logo light-content">
+    <img src="./simply-rational-logo.webp" alt="" class="navbar-logo dark-content">
     </a>
-    <a class="navbar-brand" href="../../index.html">
+    <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Data Science Blog</span>
     </a>
   </div>
@@ -152,215 +186,127 @@ div.csl-indent {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block"></header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    <h5 class="quarto-listing-category-title">Kategorien</h5><div class="quarto-listing-category category-unnumbered"><div class="category" data-category="Q1lB">CYA</div><div class="category" data-category="RGFua3NhZ3VuZw==">Danksagung</div><div class="category" data-category="RGVjaXNpb24lMjBFeGNlbGxlbmNl">Decision Excellence</div><div class="category" data-category="RGVmZW5zaXZlcyUyMEVudHNjaGVpZGVu">Defensives Entscheiden</div><div class="category" data-category="RW50c2NoZWlkdW5n">Entscheidung</div><div class="category" data-category="TExN">LLM</div><div class="category" data-category="T3BlbnNvdXJjZQ==">Opensource</div><div class="category" data-category="VW5kZXJ3cml0aW5n">Underwriting</div></div></div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Einfluss von defensivem Entscheiden</h1>
-  <div class="quarto-categories">
-    <div class="quarto-category">Decision Excellence</div>
-    <div class="quarto-category">CYA</div>
-    <div class="quarto-category">Defensives Entscheiden</div>
-  </div>
-  </div>
+<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
 
 
 
-<div class="quarto-title-meta">
-
-    <div>
-    <div class="quarto-title-meta-heading">Autor:in</div>
-    <div class="quarto-title-meta-contents">
-             <p>Majid Eismann <a href="mailto:majid.eismann@simplyrational.de" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> </p>
-          </div>
-  </div>
-    
-    <div>
-    <div class="quarto-title-meta-heading">Veröffentlichungsdatum</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">1. Oktober 2026</p>
-    </div>
-  </div>
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<section id="tldr" class="level2">
-<h2 class="anchored" data-anchor-id="tldr">TL;DR</h2>
-</section>
-<section id="anwendungsfall" class="level2">
-<h2 class="anchored" data-anchor-id="anwendungsfall">Anwendungsfall</h2>
-</section>
-<section id="hintergrund" class="level2">
-<h2 class="anchored" data-anchor-id="hintergrund">Hintergrund</h2>
-</section>
-<section id="methoden" class="level2">
-<h2 class="anchored" data-anchor-id="methoden">Methoden</h2>
-<p><span class="citation" data-cites="artinger2025CopingWithUncertainty">FM Artinger (<a href="#ref-artinger2025CopingWithUncertainty" role="doc-biblioref">2025</a>)</span> zeigt in einer empirischen Untersuchung, dass 36% der Entscheidungen von Kolleg*innen in einer Befragung als defensiv eingeschätzt wurden. Weiter wurde in der Studie der Einfluss von diesen Entscheidungen auf die Finanzen mit rund 30% beziffert. Damit ergibt sich ein Gesamteffekt von 10.8% Prozent (36% Prävalenz defensiver Entscheidung * 30% finanziller Einfluss).</p>
-<p>Die 36% als Maßgabe für den Anteil von Entscheidungen und 10.8% als Anteil am Umsatz wurden</p>
-</section>
-<section id="ergebnisse" class="level2">
-<h2 class="anchored" data-anchor-id="ergebnisse">Ergebnisse</h2>
-<pre class="shinylive-r" data-engine="r"><code>#| '!! shinylive warning !!': |
-#|   shinylive does not work in self-contained HTML documents.
-#|   Please set `embed-resources: false` in your metadata.
-#| standalone: true
-#| viewerHeight: 900
-suppressPackageStartupMessages(library(shiny))
-suppressPackageStartupMessages(library(bslib))
-suppressPackageStartupMessages(library(ggplot2))
-
-# Annahmen
-jahre             &lt;- 1:20
-wachstum          &lt;- 0.02   # jährliches Umsatzwachstum
-anteil_verlust    &lt;- 0.108   # entgangener Umsatz durch defensive Entscheidungen
-entsch_mitarb     &lt;- 215*70   # Entscheidungen pro Mitarbeitende:r und Jahr
-entsch_manager    &lt;- 215*70   # Entscheidungen pro Manager:in und Jahr
-anteil_defensiv   &lt;- 0.36   # Anteil defensiver Entscheidungen
-p_innovation      &lt;- 0.001   # 1 von 1000 Entscheidungen führt zu einer Innovation
-
-farben &lt;- c(Mitarbeitende = "#1AA7B4", Manager = "#661AAE")
-
-fmt &lt;- function(x, digits = 0) {
-  format(round(x, digits), big.mark = ".", decimal.mark = ",",
-         scientific = FALSE, trim = TRUE)
-}
-
-pct &lt;- function(x) paste(fmt(x * 100, 1), "%")
-
-theme_sr &lt;- function() {
-  theme_minimal(base_size = 14) +
-    theme(
-      plot.background  = element_rect(fill = "#FFF5EB", colour = NA),
-      panel.background = element_rect(fill = "#FFF5EB", colour = NA),
-      panel.grid.minor = element_blank(),
-      legend.position  = "top",
-      legend.title     = element_blank(),
-      plot.title       = element_text(face = "bold")
-    )
-}
-
-ui &lt;- page_fluid(
-  theme = bs_theme(bg = "#FFF5EB", fg = "#020202", primary = "#661AAE"),
-  card(
-    layout_column_wrap(
-      width = "220px",
-      numericInput("umsatz", "Jahresumsatz (Mio. EUR)", value = 100, min = 0, step = 0.1),
-      numericInput("mitarbeitende", "Mitarbeitende (gesamt)", value = 500, min = 1, step = 10),
-      sliderInput("manager", "Anteil Manager:innen (%)", min = 0, max = 100, value = 15, step = 1)
-    ),
-    helpText(
-      "Annahmen: Umsatz wächst", pct(wachstum), "p. a.;", pct(anteil_verlust),
-      "des Umsatzes entgehen durch defensive Entscheidungen. Mitarbeitende treffen",
-      paste0(fmt(entsch_mitarb), ","), "Manager:innen", fmt(entsch_manager),
-      "Entscheidungen pro Jahr, davon sind", pct(anteil_defensiv), "defensiv. Jede",
-      paste0(fmt(1 / p_innovation), "."), "Entscheidung hätte eine Innovation ausgelöst.",
-      "Manager:innen sind in der Gesamtzahl enthalten."
-    )
-  ),
-  layout_column_wrap(
-    width = "220px",
-    value_box("Entgangener Umsatz (20 J.)", textOutput("vb_umsatz")),
-    value_box("Defensive Entscheidungen (20 J.)", textOutput("vb_entsch")),
-    value_box("Verpasste Innovationen (20 J.)", textOutput("vb_innov"))
-  ),
-  navset_card_underline(
-    nav_panel("Entgangener Umsatz", plotOutput("plot_umsatz", height = "420px")),
-    nav_panel("Defensive Entscheidungen", plotOutput("plot_entsch", height = "420px")),
-    nav_panel("Verpasste Innovationen", plotOutput("plot_innov", height = "420px"))
-  )
-)
-
-server &lt;- function(input, output, session) {
-
-  daten &lt;- reactive({
-    req(input$umsatz, input$mitarbeitende)
-    n_manager &lt;- input$mitarbeitende * input$manager / 100
-    n_mitarb  &lt;- input$mitarbeitende - n_manager
-
-    umsatz  &lt;- input$umsatz * 1e6 * (1 + wachstum)^(jahre - 1)   # Eingabe in Mio. EUR
-    verlust &lt;- umsatz * anteil_verlust
-
-    def_mitarb  &lt;- n_mitarb  * entsch_mitarb  * anteil_defensiv
-    def_manager &lt;- n_manager * entsch_manager * anteil_defensiv
-
-    entsch &lt;- data.frame(
-      jahr   = rep(jahre, 2),
-      gruppe = factor(rep(c("Mitarbeitende", "Manager"), each = length(jahre)),
-                      levels = names(farben)),
-      defensiv_kum = c(cumsum(rep(def_mitarb, length(jahre))),
-                       cumsum(rep(def_manager, length(jahre))))
-    )
-    entsch$innov_kum &lt;- entsch$defensiv_kum * p_innovation
-
-    list(
-      umsatz = data.frame(jahr = jahre, verlust_kum = cumsum(verlust)),
-      entsch = entsch
-    )
-  })
-
-  summe_jahr20 &lt;- function(df, spalte) sum(df[df$jahr == max(jahre), spalte])
-
-  output$vb_umsatz &lt;- renderText(
-    paste(fmt(tail(daten()$umsatz$verlust_kum, 1) / 1e3), "Tsd. EUR")
-  )
-  output$vb_entsch &lt;- renderText(fmt(summe_jahr20(daten()$entsch, "defensiv_kum")))
-  output$vb_innov  &lt;- renderText(fmt(summe_jahr20(daten()$entsch, "innov_kum")))
-
-  output$plot_umsatz &lt;- renderPlot({
-    ggplot(daten()$umsatz, aes(jahr, verlust_kum / 1e3)) +
-      geom_area(fill = "#EA5A0C", alpha = 0.85) +
-      scale_x_continuous(breaks = seq(0, 20, 2)) +
-      scale_y_continuous(labels = fmt) +
-      labs(title = "Kumulierter entgangener Umsatz",
-           x = "Jahr", y = "Tsd. EUR") +
-      theme_sr()
-  }, bg = "#FFF5EB")
-
-  output$plot_entsch &lt;- renderPlot({
-    ggplot(daten()$entsch, aes(jahr, defensiv_kum, fill = gruppe)) +
-      geom_area(alpha = 0.85) +
-      scale_fill_manual(values = farben) +
-      scale_x_continuous(breaks = seq(0, 20, 2)) +
-      scale_y_continuous(labels = fmt) +
-      labs(title = "Kumulierte defensive Entscheidungen",
-           x = "Jahr", y = "Anzahl Entscheidungen") +
-      theme_sr()
-  }, bg = "#FFF5EB")
-
-  output$plot_innov &lt;- renderPlot({
-    ggplot(daten()$entsch, aes(jahr, innov_kum, fill = gruppe)) +
-      geom_area(alpha = 0.85) +
-      scale_fill_manual(values = farben) +
-      scale_x_continuous(breaks = seq(0, 20, 2)) +
-      scale_y_continuous(labels = fmt) +
-      labs(title = "Kumulierte verpasste Innovationen (erwartet, p = 1 %)",
-           x = "Jahr", y = "Anzahl Innovationen") +
-      theme_sr()
-  }, bg = "#FFF5EB")
-}
-
-shinyApp(ui, server)</code></pre>
 
 
 
-</section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Literatur</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
-<div id="ref-artinger2025CopingWithUncertainty" class="csl-entry" role="listitem">
-FM Artinger, N. J., S Marx-Fleck. (2025). Coping with uncertainty:The interaction of psychological safety and authentic leadership in their effects on defensive decision making. <em>Journal of Business Research</em>, (190, 115240).
+
+<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-categories="RGVjaXNpb24lMjBFeGNlbGxlbmNlJTJDQ1lBJTJDRGVmZW5zaXZlcyUyMEVudHNjaGVpZGVu" data-listing-date-sort="1790812800000" data-listing-file-modified-sort="1791373775651" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1066">
+<div class="thumbnail"><a href="./posts/defensivedecision/index.html" class="no-external">
+
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/defensivedecision/index.html" class="no-external">Einfluss von defensivem Entscheiden</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('RGVjaXNpb24lMjBFeGNlbGxlbmNl'); return false;">Decision Excellence</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('Q1lB'); return false;">CYA</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('RGVmZW5zaXZlcyUyMEVudHNjaGVpZGVu'); return false;">Defensives Entscheiden</div>
+
 </div>
-</div></section></div></main> <!-- /main -->
+<div class="delink listing-description"><a href="./posts/defensivedecision/index.html" class="no-external">
+<span class="citation" data-cites="artinger2025CopingWithUncertainty">FM Artinger (2025)</span> zeigt in einer empirischen Untersuchung, dass 36% der Entscheidungen von Kolleg*innen in einer Befragung als defensiv eingeschätzt wurden. Weiter wurde in…
+</a></div>
+</div>
+<div class="metadata">
+<a href="./posts/defensivedecision/index.html" class="no-external">
+<div class="listing-date">
+01.10.2026
+</div>
+<div class="listing-author">
+Majid Eismann
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-categories="RW50c2NoZWlkdW5nJTJDVW5kZXJ3cml0aW5nJTJDTExN" data-listing-date-sort="1789689600000" data-listing-file-modified-sort="1791299461407" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1191">
+<div class="thumbnail"><a href="./posts/underwriter_llm/index.html" class="no-external">
+
+<img loading="lazy" src="./posts/underwriter_llm/ce7ec2a6-c03d-4500-989b-bfef3053370e.png" class="thumbnail-image">
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/underwriter_llm/index.html" class="no-external">Entscheidungsqualität von LLMs im Underwriting</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('RW50c2NoZWlkdW5n'); return false;">Entscheidung</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('VW5kZXJ3cml0aW5n'); return false;">Underwriting</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('TExN'); return false;">LLM</div>
+
+</div>
+<div class="delink listing-description"><a href="./posts/underwriter_llm/index.html" class="no-external">
+Underwriting ist die zentrale Schaltstelle im Versicherungsgeschäft. <span class="citation" data-cites="maistry2025">Gavin R. Maistry (2025-11)</span> zeigen in einer Studie einen positiven Einfluss durch das Heuristiktraining…<strong></strong>
+</a></div>
+</div>
+<div class="metadata">
+<a href="./posts/underwriter_llm/index.html" class="no-external">
+<div class="listing-date">
+18.09.2026
+</div>
+<div class="listing-author">
+Majid Eismann
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="2" data-categories="T3BlbnNvdXJjZSUyQ0RhbmtzYWd1bmc=" data-listing-date-sort="1789603200000" data-listing-file-modified-sort="1791377165667" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="117">
+<div class="thumbnail"><a href="./posts/opensource_credits/index.html" class="no-external">
+
+<img loading="lazy" src="./posts/opensource_credits/oss-jenga-thanks.png" class="thumbnail-image">
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/opensource_credits/index.html" class="no-external">Open Source</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('T3BlbnNvdXJjZQ=='); return false;">Opensource</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('RGFua3NhZ3VuZw=='); return false;">Danksagung</div>
+
+</div>
+<div class="delink listing-description"><a href="./posts/opensource_credits/index.html" class="no-external">
+Simply Rational und das Data Science Team möchten sich explizit bei der Open Source Community für ihre Arbeit bedanken. Ohne eure Arbeit wäre die Erstellung dieses Blogs…
+</a></div>
+</div>
+<div class="metadata">
+<a href="./posts/opensource_credits/index.html" class="no-external">
+<div class="listing-date">
+17.09.2026
+</div>
+<div class="listing-author">
+Majid Eismann
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">Keine Treffer</div>
+</div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
