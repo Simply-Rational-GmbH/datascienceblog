@@ -1,0 +1,183 @@
+---
+title: "Einfluss von defensivem Entscheiden"
+author:
+  - name: Majid Eismann
+    email: majid.eismann@simplyrational.de
+date: 2026-10-01
+categories: [Decision Excellence, CYA, Defensives Entscheiden]
+execute:
+  freeze: false
+  echo: false
+  warn: false
+  error: false
+bibliography: grateful-refs.bib
+csl: apa
+filters:
+  - shinylive
+---
+
+```{r}
+# comment
+```
+
+## TL;DR
+
+## Anwendungsfall
+
+## Hintergrund
+
+## Methoden 
+
+@artinger2025CopingWithUncertainty zeigt in einer empirischen Untersuchung, dass 36% der Entscheidungen von Kolleg\*innen in einer Befragung als defensiv eingeschätzt wurden. Weiter wurde in der Studie der Einfluss von diesen Entscheidungen auf die Finanzen mit rund 30% beziffert. Damit ergibt sich ein Gesamteffekt von 10.8% Prozent (36% Prävalenz defensiver Entscheidung * 30% finanziller Einfluss). 
+
+Die 36% als Maßgabe für den Anteil von Entscheidungen und 10.8% als Anteil am Umsatz wurden 
+
+
+## Ergebnisse
+
+```{shinylive-r}
+#| standalone: true
+#| viewerHeight: 900
+suppressPackageStartupMessages(library(shiny))
+suppressPackageStartupMessages(library(bslib))
+suppressPackageStartupMessages(library(ggplot2))
+
+# Annahmen
+jahre             <- 1:20
+wachstum          <- 0.02   # jährliches Umsatzwachstum
+anteil_verlust    <- 0.108   # entgangener Umsatz durch defensive Entscheidungen
+entsch_mitarb     <- 215*70   # Entscheidungen pro Mitarbeitende:r und Jahr
+entsch_manager    <- 215*70   # Entscheidungen pro Manager:in und Jahr
+anteil_defensiv   <- 0.36   # Anteil defensiver Entscheidungen
+p_innovation      <- 0.001   # 1 von 1000 Entscheidungen führt zu einer Innovation
+
+farben <- c(Mitarbeitende = "#1AA7B4", Manager = "#661AAE")
+
+fmt <- function(x, digits = 0) {
+  format(round(x, digits), big.mark = ".", decimal.mark = ",",
+         scientific = FALSE, trim = TRUE)
+}
+
+pct <- function(x) paste(fmt(x * 100, 1), "%")
+
+theme_sr <- function() {
+  theme_minimal(base_size = 14) +
+    theme(
+      plot.background  = element_rect(fill = "#FFF5EB", colour = NA),
+      panel.background = element_rect(fill = "#FFF5EB", colour = NA),
+      panel.grid.minor = element_blank(),
+      legend.position  = "top",
+      legend.title     = element_blank(),
+      plot.title       = element_text(face = "bold")
+    )
+}
+
+ui <- page_fluid(
+  theme = bs_theme(bg = "#FFF5EB", fg = "#020202", primary = "#661AAE"),
+  card(
+    layout_column_wrap(
+      width = "220px",
+      numericInput("umsatz", "Jahresumsatz (Mio. EUR)", value = 100, min = 0, step = 0.1),
+      numericInput("mitarbeitende", "Mitarbeitende (gesamt)", value = 500, min = 1, step = 10),
+      sliderInput("manager", "Anteil Manager:innen (%)", min = 0, max = 100, value = 15, step = 1)
+    ),
+    helpText(
+      "Annahmen: Umsatz wächst", pct(wachstum), "p. a.;", pct(anteil_verlust),
+      "des Umsatzes entgehen durch defensive Entscheidungen. Mitarbeitende treffen",
+      paste0(fmt(entsch_mitarb), ","), "Manager:innen", fmt(entsch_manager),
+      "Entscheidungen pro Jahr, davon sind", pct(anteil_defensiv), "defensiv. Jede",
+      paste0(fmt(1 / p_innovation), "."), "Entscheidung hätte eine Innovation ausgelöst.",
+      "Manager:innen sind in der Gesamtzahl enthalten."
+    )
+  ),
+  layout_column_wrap(
+    width = "220px",
+    value_box("Entgangener Umsatz (20 J.)", textOutput("vb_umsatz")),
+    value_box("Defensive Entscheidungen (20 J.)", textOutput("vb_entsch")),
+    value_box("Verpasste Innovationen (20 J.)", textOutput("vb_innov"))
+  ),
+  navset_card_underline(
+    nav_panel("Entgangener Umsatz", plotOutput("plot_umsatz", height = "420px")),
+    nav_panel("Defensive Entscheidungen", plotOutput("plot_entsch", height = "420px")),
+    nav_panel("Verpasste Innovationen", plotOutput("plot_innov", height = "420px"))
+  )
+)
+
+server <- function(input, output, session) {
+
+  daten <- reactive({
+    req(input$umsatz, input$mitarbeitende)
+    n_manager <- input$mitarbeitende * input$manager / 100
+    n_mitarb  <- input$mitarbeitende - n_manager
+
+    umsatz  <- input$umsatz * 1e6 * (1 + wachstum)^(jahre - 1)   # Eingabe in Mio. EUR
+    verlust <- umsatz * anteil_verlust
+
+    def_mitarb  <- n_mitarb  * entsch_mitarb  * anteil_defensiv
+    def_manager <- n_manager * entsch_manager * anteil_defensiv
+
+    entsch <- data.frame(
+      jahr   = rep(jahre, 2),
+      gruppe = factor(rep(c("Mitarbeitende", "Manager"), each = length(jahre)),
+                      levels = names(farben)),
+      defensiv_kum = c(cumsum(rep(def_mitarb, length(jahre))),
+                       cumsum(rep(def_manager, length(jahre))))
+    )
+    entsch$innov_kum <- entsch$defensiv_kum * p_innovation
+
+    list(
+      umsatz = data.frame(jahr = jahre, verlust_kum = cumsum(verlust)),
+      entsch = entsch
+    )
+  })
+
+  summe_jahr20 <- function(df, spalte) sum(df[df$jahr == max(jahre), spalte])
+
+  output$vb_umsatz <- renderText(
+    paste(fmt(tail(daten()$umsatz$verlust_kum, 1) / 1e3), "Tsd. EUR")
+  )
+  output$vb_entsch <- renderText(fmt(summe_jahr20(daten()$entsch, "defensiv_kum")))
+  output$vb_innov  <- renderText(fmt(summe_jahr20(daten()$entsch, "innov_kum")))
+
+  output$plot_umsatz <- renderPlot({
+    ggplot(daten()$umsatz, aes(jahr, verlust_kum / 1e3)) +
+      geom_area(fill = "#EA5A0C", alpha = 0.85) +
+      scale_x_continuous(breaks = seq(0, 20, 2)) +
+      scale_y_continuous(labels = fmt) +
+      labs(title = "Kumulierter entgangener Umsatz",
+           x = "Jahr", y = "Tsd. EUR") +
+      theme_sr()
+  }, bg = "#FFF5EB")
+
+  output$plot_entsch <- renderPlot({
+    ggplot(daten()$entsch, aes(jahr, defensiv_kum, fill = gruppe)) +
+      geom_area(alpha = 0.85) +
+      scale_fill_manual(values = farben) +
+      scale_x_continuous(breaks = seq(0, 20, 2)) +
+      scale_y_continuous(labels = fmt) +
+      labs(title = "Kumulierte defensive Entscheidungen",
+           x = "Jahr", y = "Anzahl Entscheidungen") +
+      theme_sr()
+  }, bg = "#FFF5EB")
+
+  output$plot_innov <- renderPlot({
+    ggplot(daten()$entsch, aes(jahr, innov_kum, fill = gruppe)) +
+      geom_area(alpha = 0.85) +
+      scale_fill_manual(values = farben) +
+      scale_x_continuous(breaks = seq(0, 20, 2)) +
+      scale_y_continuous(labels = fmt) +
+      labs(title = "Kumulierte verpasste Innovationen (erwartet, p = 1 %)",
+           x = "Jahr", y = "Anzahl Innovationen") +
+      theme_sr()
+  }, bg = "#FFF5EB")
+}
+
+shinyApp(ui, server)
+```
+
+
+
+
+
+
+
