@@ -1,0 +1,149 @@
+---
+title: "Entscheidungsqualität von LLMs im Underwriting"
+author:
+  - name: Majid Eismann
+    email: majid.eismann@simplyrational.de
+date: 2026-09-18
+categories: [Entscheidung, Underwriting, LLM]
+image: "ce7ec2a6-c03d-4500-989b-bfef3053370e.png"
+execute:
+  echo: false
+  warn: false
+  error: false
+bibliography: references.bib
+csl: apa
+---
+
+```{r setup}
+source(
+  paste0(simplyR::mypath(), "/datascienceblog_analysis/260916_ME_UnderwirtingLLM.R")
+)
+```
+
+## TL;DR
+
+Underwriting ist die zentrale Schaltstelle im Versicherungsgeschäft. @maistry2025 zeigen in einer Studie einen positiven Einfluss durch das Heuristiktraining auf die Arbeitsqualität bei Underwriterinnen. Die zehn wissenschaftlich belegten Heuristiken wurden mit gängigen LLM-Modellen über Prompting evaluiert. Alle geprüften Modelle weisen eine **deutlich höhere Fehlerquote auf – im Mittel 65 % – im Vergleich zu heuristisch geschulten Underwriterinnen (mit einer Fehlerquote von 26,4 %).**
+
+## Anwendungsfall
+
+Ein Versicherungsunternehmen möchte für seinen Kernprozess, das Underwriting, lokale Large Language Models (LLMs) einsetzen. Das hat den Vorteil, dass geringere Kosten entstehen und weniger Datenschutzhürden bestehen, da die Modelle auf den eigenen Servern laufen. Die LLMs werden nicht mit Unternehmensdaten trainiert. Stattdessen werden die Maistry-Regeln dem Prompt einfach als Instruktion hinzugefügt. Sie stehen stellvertretend für Regeln und Wissen, die im Unternehmen bereits vorhanden sind. Damit ist der niedrigschwelligste Anwendungsfall für den Einsatz von LLMs abgebildet.
+
+## Hintergrund
+
+Underwriting ist die zentrale Schaltstelle im Versicherungsgeschäft, weil hier über Annahme, Ablehnung und Preis eines Risikos entschieden wird. Jede einzelne Underwriting-Entscheidung wirkt sich unmittelbar auf das Verhältnis von Prämieneinnahmen zu übernommenem Risiko aus, weshalb systematische Fehleinschätzungen sich über das gesamte Portfolio hinweg verstärken und schnell zu einer Schieflage führen können. Gerade weil diese Entscheidungen oft unter Unsicherheit und mit unvollständigen Informationen getroffen werden müssen, hängt die Qualität des Underwritings maßgeblich davon ab, wie gut Underwriter:innen Urteilsfehler wie Selbstüberschätzung oder Verzerrungen in der Risikobewertung erkennen und vermeiden.
+
+@maistry2025 untersuchen, ob sich professionelle Urteilsfähigkeit im Underwriting durch ein Training in Heuristiken beschleunigt entwickeln lässt, statt allein auf jahrelange Erfahrung zu setzen.In einem quasi-experimentellen Design mit 220 Underwriter\*innen unterschiedlicher Erfahrungsstufen erhielt eine Trainingsgruppe ein skriptbasiertes Training, das typische Situationsmuster und daraus abgeleitete Entscheidungsregeln aus Interviews mit erfahrenen Underwriter:innen vermittelte, während eine aktive Kontrollgruppe zum Vergleich diente. Die Ergebnisse zeigen, dass das Training die Entscheidungsqualität (Genauigkeit und Konsistenz) messbar verbesserte und dabei besonders Berufsanfänger\*innen zugutekam – ein Beleg dafür, dass Heuristiken unter Unsicherheit als wirksame Entscheidungsstrategien fungieren und den Aufbau von Expertise gezielt beschleunigen können.
+
+Dieser Post untersucht, inwieweit die von @maistry2025 extrahierten Heuristiken eine einfache Nutzung von LLMs verbessern können, indem die Heuristiken als Instruktion im Prompt verwendet werden. Dies spiegelt den niedrigschwelligsten Anwendungsfall für die Nutzung von LLMs wieder, das ohne Training der LLM Modell auskommt. 
+
+## Methoden 
+
+Das Design der Analyse lässt sich in der folgenden Abbildung noch einmal zusammenfassen. Welche LLMs, mit welchen Versicherungsfällen untersucht worden sind, ist oben bereits beschrieben. Die Prompts bestehen aus einer einfachen Instruktion die Versicherungsfälle als Underwriter zu ihrer Versicherbarkeit zu bewerten. In der Bedingung mit Maistry-Regeln wurden zusätzlich die Originalregeln der Studie hinzugefügt. Ein System-Prompt ist eine Anweisung an das Sprachmodell, die vor dem eigentlichen Gespräch steht. Sie legt fest, wie sich das Modell verhalten soll, und gilt für alle folgenden Nachrichten. Hier wurde instruiert die Rolle des Underwriters in einem Verscherungsunternehmen einzunehmen.
+Die **Fehlerquoten** werden am Ende als Anteil der falschen Entscheidung (ja versicherbar) der 10 Wiederholungen berechnet. 
+
+```{mermaid method-flow}
+flowchart TD
+    A["2 Versicherungsfälle<br/>(manuell überarbeitete Dokuemnte aus Claude 5.5)"]
+
+    A --> B["Prompt mit Maistry"]
+    A --> C["Prompt nur Underwriting"]
+
+    B --> B1["Mit System-Prompt"]
+    B --> B2["Ohne System-Prompt"]
+    C --> C1["Mit System-Prompt"]
+    C --> C2["Ohne System-Prompt"]
+
+    B1 --> R1["10 Wiederholungen<br/>je LLM-Modell und Fall"]
+    B2 --> R2["10 Wiederholungen<br/>je LLM-Modell und Fall"]
+    C1 --> R3["10 Wiederholungen<br/>je LLM-Modell und Fall"]
+    C2 --> R4["10 Wiederholungen<br/>je LLM-Modell und Fall"]
+```
+
+Die folgenden LLM-Modelle wurden hinsichtlich ihrer Entscheidungsqualität untersucht. Für das Prompting wurde entweder die direkte Frage nach der Versicherbarkeit des jeweiligen Falls gestellt, oder es wurde eine Hilfestellung mit den Maistry-Regeln in den Prompt integriert. Zudem wurden diese Prompts jeweils mit und ohne System-Prompt getestet.
+
+```{r model-desc}
+report_dt(used_models, options = list(dom = 't'))
+```
+
+Insgesamt haben @maistry2025 50 Versicherungsbeispiele zur Ableitung der Heuristiken verwendet. Zwei Beispiele werden in der Studie direkt beschrieben, die von Expert\*innen schnell als unversicherbar erkannt wurden, aber von Berufsanfänger\*innen teils als versicherbar bewertet wurden. Der erste Fall bezieht sich auf die [Versicherung einer Ehe](./insure_marriage.pdf) und der zweite Fall auf die Versicherung gegen [SARS-CoV-2](./insure_covid.pdf). Die verwendeten fiktiven Anträge, die von den LLM-Modellen beurteilt wurden, können über die Links eingesehen werden.
+
+Die Analyse wurden mithilfe von [Open Source](../opensource_credits/index.qmd) Software erstellt. Wir bedanken uns bei allen beteiligten Entwickler\*innen und freuen uns über das gemeinsame Bekenntnis zur Transparenz.
+
+## Ergebnisse
+
+Zunächst fällt das Gesamtergebnis sehr unterschiedlich nach Modell aus. Llama 3.1 und Mistral zeigen sehr hohe Fehlerquoten, wohingegen Gemma 3 ein perfektes Ergebnis liefert. Bei genauer Betrachtung der Gemma-3-Ergebnisse wird deutlich, dass das Modell starke Interpretationsschwierigkeiten mit den Fallbeschreibungen hat und falsche Schlüsse zieht. Der Rückgabewert des Modells ist zwar immer die Entscheidung, nicht zu versichern, diese beruht jedoch auf halluzinierten Zusammenhängen.
+
+Zum Vergleich **erzielten Underwriter\*innen eine Fehlerquote von nur 26.4%** über 20 Fallbeispiele  [@maistry2025], und damit liegt die Qualität der Entscheidungen von trainierten Underwriter\*innen deutlich über der Entscheidungsqualität von LLM-Modellen.
+
+```{r gemma3-sample}
+#| results: asis
+cat(data_raw_llm[
+   `chat_result_hash` == "c3e8c579cc1884c6e1da0a82114fec055f938a9b508267b9ecbdec8756f887a8",
+   sprintf(
+  '<details>\n<summary>Beispiel für gemma3 Fehlinterpretation des Fallbeispiels</summary>\n\n<blockquote>\n%s\n<footer>--- <cite>%s</cite></footer>\n</blockquote>\n\n</details>\n',
+  htmltools::htmlEscape(chat_result),
+  htmltools::htmlEscape(`LLM Model`)
+)])
+```
+
+```{r model-desc-mean}
+report_dt(
+  overall_results[, list("Mittelwert der Fehlerquote" = mean(Fehlerquote)), by = `LLM Model`],
+  options = list(dom = 't')
+)
+```
+
+
+### Details
+
+Die Fehlerquoten für die jeweils 10 Wiederholungen je Balken sind in der folgenden Grafik dargestellt. Der erste Balken oben links lässt sich so interpretieren, dass der Covid-Versicherungsfall bei 6 von 10 Wiederholungen angenommen wurde, wenn die Maistry-Regeln und ein Systemprompt verwendet wurden, um die Aufgabe als Underwriter\*in zu lösen.
+
+Teilweise zeigt sich ein positiver Effekt der Anwendung der Maistry-Regeln, z. B. für Qwen3, aber auch der umgekehrte Effekt für Mistral. Der Systemprompt scheint i. d. R. die Fehlerquote zu erhöhen.
+
+Zwar scheinen die Fehlerquoten von Qwen3 für die Ehe-Versicherung sehr niedrig zu sein (ohne Systemprompt), sie zeigen sich jedoch nicht konsistent mit den wesentlich höheren Ergebnissen für die Covid-Versicherung. Eine konsistente Anwendung der Regeln gelingt dem Modell nicht und sollte mit weiteren Fallbeispielen untersucht werden. Der umgekehrte Zusammenhang zeigt sich für Mistral und Qwen3 mit Systemprompt (Covid vergleichbar gering, aber der Ehe-Fall sehr hoch).
+
+Für ein genaueres Bild und eine bessere Vergleichbarkeit sollten weitere Versicherungsfälle hinzugefügt werden.
+
+
+```{r result-overall}
+ggplot(overall_results[!`LLM Model` %in% c("gemma3")]) +
+aes(
+  x = `LLM Model`,
+  y = Fehlerquote,
+  fill = `Prompt Instruktion`
+) +
+geom_col(position = "dodge") +
+ scale_fill_manual(
+    values = c(
+        "Maistry Kriterien" = "#661AAE",
+        "Nur Underwriting" = "#1AA7B4"
+    )
+) +
+facet_wrap(vars(`Systemprompt verwendet`)) + 
+facet_grid(
+  Fall ~ `Systemprompt verwendet`,
+  labeller = labeller(
+    `Systemprompt verwendet` = label_value
+  )
+) + 
+ggtitle(
+  label = "Fehlerquote nach Modell, Fall und Prompt",
+  subtitle = "Systemprompt verwedet"
+) +
+theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1))
+```
+
+
+<!-- Die mittlere Tokenanzahl sowie die Summen für die verschiedenen Modelle und die Gesamtsumme über 80 Wiederholungen sind in der folgenden Tabelle dargestellt. -->
+
+<!-- ```{r token-cost} -->
+<!-- report_dt( -->
+<!--   data_token[, -c("T Kosten"), with = F], -->
+<!--   options = list(dom = 't'), -->
+<!--   caption = "TI: Token Input, TO: Token Output, Summen beziehen sich auf 80 Wiederholungen." -->
+<!-- ) -->
+<!-- ``` -->
+
+
+Sie möchten mehr zu dem Thema erfahren oder haben Fragen? Kommen Sie gerne auf uns zu und schicken Sie uns eine [Nachricht](mailto:GuteEntscheidung@simplyrational.de?subject=DataScienceBlog-UnderwriterLLM).
+
