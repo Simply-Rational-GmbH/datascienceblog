@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.10.18">
+<meta name="generator" content="quarto-1.9.38">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -13,13 +13,10 @@
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
+code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: 1.5em;}
-div.column{flex: auto;}
-@media screen {
-div.columns{gap: min(4vw, 1.5em);}
-div.column{overflow-x: auto;}
-}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -53,37 +50,21 @@ div.csl-indent {
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-062e5b28287d0e8bfab7b21da9132919.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-062e5b28287d0e8bfab7b21da9132919.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-062e5b28287d0e8bfab7b21da9132919.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-1c8ba4aea16fae7be758cecde4d14562.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-1c8ba4aea16fae7be758cecde4d14562.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-1c8ba4aea16fae7be758cecde4d14562.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
-  "location": "navbar",
-  "copy-button": false,
-  "collapse-after": 3,
-  "panel-placement": "end",
-  "type": "overlay",
-  "limit": 50,
-  "keyboard-shortcut": [
-    "f",
-    "/",
-    "s"
-  ],
-  "show-item-context": false,
   "language": {
     "search-no-results-text": "Keine Treffer",
     "search-matching-documents-text": "Treffer",
@@ -114,30 +95,24 @@ div.csl-indent {
     <img src="../../simply-rational-logo.webp" alt="" class="navbar-logo light-content">
     <img src="../../simply-rational-logo.webp" alt="" class="navbar-logo dark-content">
     </a>
-    <a class="navbar-brand" href="../../index.html">
-    <span class="navbar-title">Data Science Blog</span>
-    </a>
   </div>
-            <div id="quarto-search" class="" title="Suchen"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navigation umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/Simply-Rational-GmbH"> <i class="bi bi-github" role="img">
-</i> 
-<span class="menu-text"></span></a>
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">DE</span></a>
   </li>  
-  <li class="nav-item compact">
-    <a class="nav-link" href="https://www.linkedin.com/company/simply-rational/"> <i class="bi bi-linkedin" role="img">
-</i> 
-<span class="menu-text"></span></a>
+  <li class="nav-item">
+    <span class="nav-link">
+<span class="menu-text">EN</span>
+    </span>
   </li>  
-  <li class="nav-item compact">
-    <a class="nav-link" href="https://www.simplyrational.de/"> <i class="bi bi-globe" role="img">
-</i> 
-<span class="menu-text"></span></a>
+  <li class="nav-item">
+    <a class="nav-link" href="mailto:GuteEntscheidung@simplyrational.de"> 
+<span class="menu-text">Gute Entscheidung</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -195,7 +170,7 @@ div.csl-indent {
 </section>
 <section id="quellen-verwendeter-software" class="level2">
 <h2 class="anchored" data-anchor-id="quellen-verwendeter-software">Quellen verwendeter Software</h2>
-<p>Wir nutzen R v. 4.6.1 <span class="citation" data-cites="base">(<a href="#ref-base" role="doc-biblioref">R Core Team, 2026</a>)</span> und folgende R-Pakete: base64enc v. 0.1.6 <span class="citation" data-cites="base64enc">(<a href="#ref-base64enc" role="doc-biblioref">Urbanek, 2026</a>)</span>, bslib v. 0.12.0 <span class="citation" data-cites="bslib">(<a href="#ref-bslib" role="doc-biblioref">Sievert et al., 2026</a>)</span>, cachem v. 1.1.0 <span class="citation" data-cites="cachem">(<a href="#ref-cachem" role="doc-biblioref">Chang, 2024a</a>)</span>, desc v. 1.4.3 <span class="citation" data-cites="desc">(<a href="#ref-desc" role="doc-biblioref">Csárdi et al., 2023</a>)</span>, digest v. 0.6.39 <span class="citation" data-cites="digest">(<a href="#ref-digest" role="doc-biblioref">Eddelbuettel, 2025</a>)</span>, evaluate v. 1.0.5 <span class="citation" data-cites="evaluate">(<a href="#ref-evaluate" role="doc-biblioref">Wickham &amp; Xie, 2025</a>)</span>, fastmap v. 1.2.0 <span class="citation" data-cites="fastmap">(<a href="#ref-fastmap" role="doc-biblioref">Chang, 2024b</a>)</span>, fontawesome v. 0.5.3 <span class="citation" data-cites="fontawesome">(<a href="#ref-fontawesome" role="doc-biblioref">Iannone, 2024</a>)</span>, fs v. 2.1.0 <span class="citation" data-cites="fs">(<a href="#ref-fs" role="doc-biblioref">Hester et al., 2026</a>)</span>, grateful v. 0.3.0 <span class="citation" data-cites="grateful">(<a href="#ref-grateful" role="doc-biblioref">Rodriguez-Sanchez &amp; Jackson, 2025</a>)</span>, highr v. 0.12 <span class="citation" data-cites="highr">(<a href="#ref-highr" role="doc-biblioref">Xie &amp; Qiu, 2026</a>)</span>, htmltools v. 0.5.9 <span class="citation" data-cites="htmltools">(<a href="#ref-htmltools" role="doc-biblioref">Cheng, Sievert, et al., 2025</a>)</span>, jquerylib v. 0.1.4 <span class="citation" data-cites="jquerylib">(<a href="#ref-jquerylib" role="doc-biblioref">Sievert &amp; Cheng, 2021</a>)</span>, knitr v. 1.52 <span class="citation" data-cites="knitr2014 knitr2015 knitr2026">(<a href="#ref-knitr2014" role="doc-biblioref">Xie, 2014</a>, <a href="#ref-knitr2015" role="doc-biblioref">2015</a>, <a href="#ref-knitr2026" role="doc-biblioref">2026a</a>)</span>, lifecycle v. 1.0.5 <span class="citation" data-cites="lifecycle">(<a href="#ref-lifecycle" role="doc-biblioref">Henry &amp; Wickham, 2026</a>)</span>, memoise v. 2.0.1 <span class="citation" data-cites="memoise">(<a href="#ref-memoise" role="doc-biblioref">Wickham et al., 2021</a>)</span>, mime v. 0.13 <span class="citation" data-cites="mime">(<a href="#ref-mime" role="doc-biblioref">Xie, 2025</a>)</span>, R6 v. 2.6.1 <span class="citation" data-cites="R6">(<a href="#ref-R6" role="doc-biblioref">Chang, 2025</a>)</span>, rappdirs v. 0.3.4 <span class="citation" data-cites="rappdirs">(<a href="#ref-rappdirs" role="doc-biblioref">Ratnakumar et al., 2026</a>)</span>, remotes v. 2.5.0 <span class="citation" data-cites="remotes">(<a href="#ref-remotes" role="doc-biblioref">Csárdi et al., 2024</a>)</span>, renv v. 1.2.4 <span class="citation" data-cites="renv">(<a href="#ref-renv" role="doc-biblioref">Ushey &amp; Wickham, 2026</a>)</span>, rmarkdown v. 2.32 <span class="citation" data-cites="rmarkdown2018 rmarkdown2020 rmarkdown2026">(<a href="#ref-rmarkdown2026" role="doc-biblioref">Allaire et al., 2026</a>; <a href="#ref-rmarkdown2018" role="doc-biblioref">Xie et al., 2018</a>; <a href="#ref-rmarkdown2020" role="doc-biblioref">Xie et al., 2020</a>)</span>, sass v. 0.4.10 <span class="citation" data-cites="sass">(<a href="#ref-sass" role="doc-biblioref">Cheng, Mastny, et al., 2025</a>)</span>, tidyverse v. 2.0.0 <span class="citation" data-cites="tidyverse">(<a href="#ref-tidyverse" role="doc-biblioref">Wickham et al., 2019</a>)</span>, tinytex v. 0.60 <span class="citation" data-cites="tinytex2019 tinytex2026">(<a href="#ref-tinytex2019" role="doc-biblioref">Xie, 2019</a>, <a href="#ref-tinytex2026" role="doc-biblioref">2026b</a>)</span>, xfun v. 0.60 <span class="citation" data-cites="xfun">(<a href="#ref-xfun" role="doc-biblioref">Xie, 2026c</a>)</span>, yaml v. 2.3.12 <span class="citation" data-cites="yaml">(<a href="#ref-yaml" role="doc-biblioref">Stephens &amp; Simonov, 2025</a>)</span>.</p>
+<p>Wir nutzen R v. 4.6.1 <span class="citation" data-cites="base">(<a href="#ref-base" role="doc-biblioref">R Core Team, 2026</a>)</span> und folgende R-Pakete: base64enc v. 0.1.6 <span class="citation" data-cites="base64enc">(<a href="#ref-base64enc" role="doc-biblioref">Urbanek, 2026</a>)</span>, bslib v. 0.12.0 <span class="citation" data-cites="bslib">(<a href="#ref-bslib" role="doc-biblioref">Sievert et al., 2026</a>)</span>, cachem v. 1.1.0 <span class="citation" data-cites="cachem">(<a href="#ref-cachem" role="doc-biblioref">Chang, 2024a</a>)</span>, desc v. 1.4.3 <span class="citation" data-cites="desc">(<a href="#ref-desc" role="doc-biblioref">Csárdi et al., 2023</a>)</span>, digest v. 0.6.39 <span class="citation" data-cites="digest">(<a href="#ref-digest" role="doc-biblioref">Eddelbuettel, 2025</a>)</span>, evaluate v. 1.0.5 <span class="citation" data-cites="evaluate">(<a href="#ref-evaluate" role="doc-biblioref">Wickham &amp; Xie, 2025</a>)</span>, fastmap v. 1.2.0 <span class="citation" data-cites="fastmap">(<a href="#ref-fastmap" role="doc-biblioref">Chang, 2024b</a>)</span>, fontawesome v. 0.5.3 <span class="citation" data-cites="fontawesome">(<a href="#ref-fontawesome" role="doc-biblioref">Iannone, 2024</a>)</span>, fs v. 2.1.0 <span class="citation" data-cites="fs">(<a href="#ref-fs" role="doc-biblioref">Hester et al., 2026</a>)</span>, grateful v. 0.3.0 <span class="citation" data-cites="grateful">(<a href="#ref-grateful" role="doc-biblioref">Rodriguez-Sanchez &amp; Jackson, 2025</a>)</span>, highr v. 0.12 <span class="citation" data-cites="highr">(<a href="#ref-highr" role="doc-biblioref">Xie &amp; Qiu, 2026</a>)</span>, htmltools v. 0.5.9 <span class="citation" data-cites="htmltools">(<a href="#ref-htmltools" role="doc-biblioref">Cheng, Sievert, et al., 2025</a>)</span>, jquerylib v. 0.1.4 <span class="citation" data-cites="jquerylib">(<a href="#ref-jquerylib" role="doc-biblioref">Sievert &amp; Cheng, 2021</a>)</span>, knitr v. 1.51 <span class="citation" data-cites="knitr2014 knitr2015 knitr2025">(<a href="#ref-knitr2014" role="doc-biblioref">Xie, 2014</a>, <a href="#ref-knitr2015" role="doc-biblioref">2015</a>, <a href="#ref-knitr2025" role="doc-biblioref">2025a</a>)</span>, lifecycle v. 1.0.5 <span class="citation" data-cites="lifecycle">(<a href="#ref-lifecycle" role="doc-biblioref">Henry &amp; Wickham, 2026</a>)</span>, memoise v. 2.0.1 <span class="citation" data-cites="memoise">(<a href="#ref-memoise" role="doc-biblioref">Wickham et al., 2021</a>)</span>, mime v. 0.13 <span class="citation" data-cites="mime">(<a href="#ref-mime" role="doc-biblioref">Xie, 2025b</a>)</span>, R6 v. 2.6.1 <span class="citation" data-cites="R6">(<a href="#ref-R6" role="doc-biblioref">Chang, 2025</a>)</span>, rappdirs v. 0.3.4 <span class="citation" data-cites="rappdirs">(<a href="#ref-rappdirs" role="doc-biblioref">Ratnakumar et al., 2026</a>)</span>, remotes v. 2.5.0 <span class="citation" data-cites="remotes">(<a href="#ref-remotes" role="doc-biblioref">Csárdi et al., 2024</a>)</span>, renv v. 1.2.4 <span class="citation" data-cites="renv">(<a href="#ref-renv" role="doc-biblioref">Ushey &amp; Wickham, 2026</a>)</span>, rmarkdown v. 2.32 <span class="citation" data-cites="rmarkdown2018 rmarkdown2020 rmarkdown2026">(<a href="#ref-rmarkdown2026" role="doc-biblioref">Allaire et al., 2026</a>; <a href="#ref-rmarkdown2018" role="doc-biblioref">Xie et al., 2018</a>; <a href="#ref-rmarkdown2020" role="doc-biblioref">Xie et al., 2020</a>)</span>, sass v. 0.4.10 <span class="citation" data-cites="sass">(<a href="#ref-sass" role="doc-biblioref">Cheng, Mastny, et al., 2025</a>)</span>, tidyverse v. 2.0.0 <span class="citation" data-cites="tidyverse">(<a href="#ref-tidyverse" role="doc-biblioref">Wickham et al., 2019</a>)</span>, tinytex v. 0.60 <span class="citation" data-cites="tinytex2019 tinytex2026">(<a href="#ref-tinytex2019" role="doc-biblioref">Xie, 2019</a>, <a href="#ref-tinytex2026" role="doc-biblioref">2026a</a>)</span>, xfun v. 0.60 <span class="citation" data-cites="xfun">(<a href="#ref-xfun" role="doc-biblioref">Xie, 2026b</a>)</span>, yaml v. 2.3.12 <span class="citation" data-cites="yaml">(<a href="#ref-yaml" role="doc-biblioref">Stephens &amp; Simonov, 2025</a>)</span>.</p>
 
 
 
@@ -280,17 +255,17 @@ Xie, Y. (2015). <em>Dynamic Documents with <span>R</span> and knitr</em> (2nd Au
 <div id="ref-tinytex2019" class="csl-entry" role="listitem">
 Xie, Y. (2019). <span>TinyTeX</span>: A lightweight, cross-platform, and easy-to-maintain LaTeX distribution based on TeX Live. <em>TUGboat</em>, <em>40</em>(1), 30–32. <a href="https://tug.org/TUGboat/Contents/contents40-1.html">https://tug.org/TUGboat/Contents/contents40-1.html</a>
 </div>
-<div id="ref-mime" class="csl-entry" role="listitem">
-Xie, Y. (2025). <em><span>mime</span>: Map Filenames to MIME Types</em>. <a href="https://doi.org/10.32614/CRAN.package.mime">https://doi.org/10.32614/CRAN.package.mime</a>
+<div id="ref-knitr2025" class="csl-entry" role="listitem">
+Xie, Y. (2025a). <em><span>knitr</span>: A General-Purpose Package for Dynamic Report Generation in <span>R</span></em>. <a href="https://yihui.org/knitr/">https://yihui.org/knitr/</a>
 </div>
-<div id="ref-knitr2026" class="csl-entry" role="listitem">
-Xie, Y. (2026a). <em><span>knitr</span>: A General-Purpose Package for Dynamic Report Generation in <span>R</span></em>. <a href="https://yihui.org/knitr/">https://yihui.org/knitr/</a>
+<div id="ref-mime" class="csl-entry" role="listitem">
+Xie, Y. (2025b). <em><span>mime</span>: Map Filenames to MIME Types</em>. <a href="https://doi.org/10.32614/CRAN.package.mime">https://doi.org/10.32614/CRAN.package.mime</a>
 </div>
 <div id="ref-tinytex2026" class="csl-entry" role="listitem">
-Xie, Y. (2026b). <em><span>tinytex</span>: Helper Functions to Install and Maintain TeX Live, and Compile LaTeX Documents</em>. <a href="https://github.com/rstudio/tinytex">https://github.com/rstudio/tinytex</a>
+Xie, Y. (2026a). <em><span>tinytex</span>: Helper Functions to Install and Maintain TeX Live, and Compile LaTeX Documents</em>. <a href="https://github.com/rstudio/tinytex">https://github.com/rstudio/tinytex</a>
 </div>
 <div id="ref-xfun" class="csl-entry" role="listitem">
-Xie, Y. (2026c). <em><span>xfun</span>: Supporting Functions for Packages Maintained by <span>„<span>Yihui Xie</span>“</span></em>. <a href="https://doi.org/10.32614/CRAN.package.xfun">https://doi.org/10.32614/CRAN.package.xfun</a>
+Xie, Y. (2026b). <em><span>xfun</span>: Supporting Functions for Packages Maintained by <span>„<span>Yihui Xie</span>“</span></em>. <a href="https://doi.org/10.32614/CRAN.package.xfun">https://doi.org/10.32614/CRAN.package.xfun</a>
 </div>
 <div id="ref-rmarkdown2018" class="csl-entry" role="listitem">
 Xie, Y., Allaire, J. J., &amp; Grolemund, G. (2018). <em>R Markdown: The Definitive Guide</em>. Chapman; Hall/CRC. <a href="https://pkg.yihui.org/rmarkdown-book/">https://pkg.yihui.org/rmarkdown-book/</a>
@@ -302,6 +277,28 @@ Xie, Y., Dervieux, C., &amp; Riederer, E. (2020). <em>R Markdown Cookbook</em>. 
 Xie, Y., &amp; Qiu, Y. (2026). <em><span>highr</span>: Syntax Highlighting for R Source Code</em>. <a href="https://doi.org/10.32614/CRAN.package.highr">https://doi.org/10.32614/CRAN.package.highr</a>
 </div>
 </div></section></div></main> <!-- /main -->
+<footer class="sr-footer column-screen">
+  <div class="sr-footer-arc" aria-hidden="true"><div></div></div>
+  <div class="sr-footer-bar">
+    <div class="sr-footer-inner">
+      <div class="sr-footer-main">
+        <div class="sr-footer-contact">
+          <p class="sr-footer-company">SIMPLY RATIONAL GmbH</p>
+          <p>Alte Brauerei 14 | 10965 Berlin | Germany</p>
+          <p class="sr-tight"><a href="mailto:GuteEntscheidung@simplyrational.de">GuteEntscheidung@simplyrational.de</a></p>
+          <div><p>Philipp</p><p><a href="tel:+491622690262">+49 162 269 026 2</a></p></div>
+          <div><p>Susanne</p><p><a href="tel:+4917640056676">+49 176 400 566 76</a></p></div>
+        </div>
+        <a class="sr-footer-logo" href="https://www.simplyrational.de/" aria-label="Simply Rational"></a>
+        <nav class="sr-footer-legal" aria-label="Rechtliches">
+          <a href="https://www.simplyrational.de/impressum">Impressum</a>
+          <a href="https://www.simplyrational.de/datenschutz">Datenschutzerklärung</a>
+        </nav>
+      </div>
+      <div class="sr-footer-copy"><p>© 2026 SIMPLY RATIONAL GmbH</p></div>
+    </div>
+  </div>
+</footer>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

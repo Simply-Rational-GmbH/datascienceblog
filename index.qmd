@@ -1,16 +1,40 @@
 ---
+title: "Data Science Blog"
 listing:
-  type: default
+  template: _listing.ejs
   contents: posts
   sort: "date desc"
   page-size: 20
   sort-ui: false
-  categories: unnumbered
+  categories: numbered
   filter-ui: false
   feed: 
     items: 20
-  date-format: "DD.MM.YYYY"
+  date-format: "MMM D, YYYY"
   image-align: right
 page-layout: full
-title-block-banner: true
+title-block-banner: false
+body-classes: sr-home
 ---
+
+::: {.sr-hero .column-page}
+::: {.sr-hero-stem aria-hidden="true"}
+:::
+
+[Data Science trifft Entscheidungsforschung.]{.sr-hero-title role="heading" aria-level="1"}
+
+Wie können Daten, KI und menschliche Erfahrung gemeinsam zu besseren Entscheidungen beitragen? In unserem Blog teilen wir Erkenntnisse aus der Forschung, Einblicke in unsere Arbeit und Gedanken zu den Möglichkeiten und Grenzen moderner Technologien.
+:::
+
+```{=html}
+<script>
+  // Align the category sidebar with the first post (below the hero).
+  (function () {
+    const hero = document.querySelector(".sr-hero");
+    const set = () => document.documentElement.style.setProperty(
+      "--sr-hero-h", hero.getBoundingClientRect().height + "px");
+    set();
+    new ResizeObserver(set).observe(hero);
+  })();
+</script>
+```

@@ -1,0 +1,31 @@
+```{=html}
+<div class="list quarto-listing-default sr-timeline">
+<% for (const item of items) { %>
+<article class="quarto-post sr-post" <%= metadataAttrs(item) %>>
+  <div class="sr-post-meta">
+    <% if (item.date) { %><div class="listing-date"><%= item.date %></div><% } %>
+    <% if (item.author) { %><div class="listing-author"><%= item.author %></div><% } %>
+  </div>
+  <div class="sr-post-body">
+    <h3 class="no-anchor listing-title"><a href="<%- item.path %>" class="no-external"><%= item.title %></a></h3>
+    <% if (item.categories) { %>
+    <div class="listing-categories">
+      <% for (const category of item.categories) { %>
+      <div class="listing-category" onclick="window.quartoListingCategory('<%= utils.b64encode(category) %>'); return false;"><%= category %></div>
+      <% } %>
+    </div>
+    <% } %>
+    <% if (item.description) { %>
+    <div class="listing-description"><%= item.description %></div>
+    <% } %>
+    <a class="sr-read-more no-external" href="<%- item.path %>">Read More</a>
+  </div>
+  <a class="sr-post-image no-external" href="<%- item.path %>" tabindex="-1" aria-hidden="true">
+    <% if (item.image) { %>
+    <img src="<%- item.image %>" alt="" loading="lazy">
+    <% } %>
+  </a>
+</article>
+<% } %>
+</div>
+```
